@@ -1,8 +1,12 @@
-package com.android.sudesi.schoolapp;
+package com.android.sudesi.schoolapp.Activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -11,6 +15,10 @@ import android.transition.TransitionInflater;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateInterpolator;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.android.sudesi.schoolapp.R;
 
 /**
  * Created by Dinesh on 30/03/2018.
@@ -20,7 +28,11 @@ public class RegisterActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
     private CardView cvAdd;
+    private Button bt_next;
+    private EditText et_username, et_password, et_repeatpassword;
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +50,21 @@ public class RegisterActivity extends AppCompatActivity {
     private void initView() {
         fab = findViewById(R.id.fab);
         cvAdd = findViewById(R.id.cv_add);
+        et_username = (EditText) findViewById(R.id.et_username);
+        et_password = (EditText) findViewById(R.id.et_password);
+        et_repeatpassword = (EditText) findViewById(R.id.et_repeatpassword);
+        bt_next = (Button) findViewById(R.id.bt_next);
+
+        bt_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(RegisterActivity.this, StudentActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void ShowEnterAnimation() {
         Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.fabtransition);
         getWindow().setSharedElementEnterTransition(transition);
@@ -50,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
                 cvAdd.setVisibility(View.GONE);
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onTransitionEnd(Transition transition) {
                 transition.removeListener(this);
@@ -75,8 +101,9 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void animateRevealShow() {
-        Animator mAnimator = ViewAnimationUtils.createCircularReveal(cvAdd, cvAdd.getWidth()/2,0, fab.getWidth() / 2, cvAdd.getHeight());
+        Animator mAnimator = ViewAnimationUtils.createCircularReveal(cvAdd, cvAdd.getWidth() / 2, 0, fab.getWidth() / 2, cvAdd.getHeight());
         mAnimator.setDuration(500);
         mAnimator.setInterpolator(new AccelerateInterpolator());
         mAnimator.addListener(new AnimatorListenerAdapter() {
@@ -94,8 +121,10 @@ public class RegisterActivity extends AppCompatActivity {
         mAnimator.start();
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void animateRevealClose() {
-        Animator mAnimator = ViewAnimationUtils.createCircularReveal(cvAdd,cvAdd.getWidth()/2,0, cvAdd.getHeight(), fab.getWidth() / 2);
+        Animator mAnimator = ViewAnimationUtils.createCircularReveal(cvAdd, cvAdd.getWidth() / 2, 0, cvAdd.getHeight(), fab.getWidth() / 2);
         mAnimator.setDuration(500);
         mAnimator.setInterpolator(new AccelerateInterpolator());
         mAnimator.addListener(new AnimatorListenerAdapter() {
@@ -114,6 +143,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
         mAnimator.start();
     }
+
     @Override
     public void onBackPressed() {
         animateRevealClose();

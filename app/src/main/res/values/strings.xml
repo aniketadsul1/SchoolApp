@@ -9,4 +9,22 @@
     <string name="repeat_password">Repeat Password</string>
     <string name="next">NEXT</string>
     <string name="register">REGISTER</string>
+    <string name="save">SAVE</string>
+
+
+    <string name="column_studentDetails">StudentDetails</string>
+    <string name="rollNo">Roll_No</string>
+    <string name="name">Name</string>
+    <string name="dob">DOB</string>
+    <string name="address">Address</string>
+    <string name="parent_MobNo">Parent_Mobile_Number</string>
+    <string name="std">Standard</string>
+    <string name="div">Division</string>
+
+    <string name="column_parentDetails">ParentDetails</string>
+    <string name="P_Name">Name</string>
+    <string name="P_address">Address</string>
+    <string name="P_MobNo">Mobile_Number</string>
+
+
 </resources>

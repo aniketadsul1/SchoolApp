@@ -1,8 +1,10 @@
-package com.android.sudesi.schoolapp;
+package com.android.sudesi.schoolapp.Activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -11,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.android.sudesi.schoolapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListener() {
         btGo.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
                 Explode explode = new Explode();
@@ -52,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         fab.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
                 getWindow().setExitTransition(null);
