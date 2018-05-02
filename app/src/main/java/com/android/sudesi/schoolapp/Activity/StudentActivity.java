@@ -41,13 +41,13 @@ public class StudentActivity extends Activity {
         setContentView(R.layout.activity_student);
         init();
         mContext = StudentActivity.this;
-        utils = new Utils(mContext);
+        utils = new Utils(StudentActivity.this);
         studentDetailModelList = new ArrayList<>();
         studentDetailsArrayList = new ArrayList<>();
 
         DatabaseCopy databaseCopy = new DatabaseCopy();
-        AssetManager assetManager = this.getAssets();
-        databaseCopy.copy(assetManager, mContext);
+        AssetManager assetManager = StudentActivity.this.getAssets();
+        databaseCopy.copy(assetManager, StudentActivity.this);
         SchoolApp.dbCon = DataBaseCon.getInstance(getApplicationContext());
         dbHelper = new DbHelper(this);
     }
@@ -84,9 +84,9 @@ public class StudentActivity extends Activity {
                             !TextUtils.isEmpty(edt_div.getText().toString().trim())) {
 
                         String valuesArray[] = {str_rollNo, str_name, str_dob, str_address, str_parent_MobNo, str_std, str_div};
-                        String[] selectionArgs = {str_rollNo, str_name, str_dob, str_address, str_parent_MobNo, str_std, str_div};//
-                        String selection = "";
-                        boolean result = SchoolApp.dbCon.update(DbHelper.TABLE_DB_SCHOOL, null, valuesArray, utils.column_studentDetails, null);
+                        String[] selectionArgs = {str_rollNo};//
+                        String selection = "Roll_No" + " = ?";
+                        boolean result = SchoolApp.dbCon.updateBulk(DbHelper.TABLE_DB_SCHOOL, selection, valuesArray, utils.column_studentDetails, selectionArgs);
                         if (result) {
                             Toast.makeText(mContext, "Data inserted Successfully", Toast.LENGTH_SHORT).show();
                             edt_roll_no.setText("");

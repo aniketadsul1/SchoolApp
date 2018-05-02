@@ -679,4 +679,12 @@
     <dimen name="_minus8sdp">-8.00dp</dimen>
     <dimen name="_minus9sdp">-9.00dp</dimen>
 
+
+
+
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="action_button_size">56dp</dimen>
 </resources>

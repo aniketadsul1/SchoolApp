@@ -37,7 +37,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String TABLE_LOGOUT_DETAILS="table_Logout_Details";
     public static final String TABLE_STUDENT_DETAILS="CREATE TABLE `StudentDetails` (`Roll_No`TEXT,`Name`TEXT,`DOB`TEXT,`Address`TEXT,`Parent_Mobile_Number`TEXT,`Standard`TEXT,`Division`TEXT)";
 
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 1;
     private static DbHelper dbInstance = null;
     private static SQLiteDatabase db;
 
@@ -93,7 +93,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL("DROP TABLE IF EXISTS " + DATABASE_NAME);
-//        db.execSQL(TABLE_STUDENT_DETAILS);
+        db.execSQL(TABLE_STUDENT_DETAILS);
         onCreate(db);
     }
 

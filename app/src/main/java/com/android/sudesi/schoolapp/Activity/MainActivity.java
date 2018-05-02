@@ -2,6 +2,7 @@ package com.android.sudesi.schoolapp.Activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -14,7 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.sudesi.schoolapp.Home_Activity;
 import com.android.sudesi.schoolapp.R;
+import com.android.sudesi.schoolapp.SchoolApp;
+import com.android.sudesi.schoolapp.dbconfig.DataBaseCon;
+import com.android.sudesi.schoolapp.dbconfig.DatabaseCopy;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         setListener();
+
+        DatabaseCopy databaseCopy = new DatabaseCopy();
+        AssetManager assetManager = MainActivity.this.getAssets();
+        databaseCopy.copy(assetManager, MainActivity.this);
+        SchoolApp.dbCon = DataBaseCon.getInstance(getApplicationContext());
     }
 
     private void initView() {
@@ -50,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
                 getWindow().setExitTransition(explode);
                 getWindow().setEnterTransition(explode);
+                Intent i=new Intent(MainActivity.this,Home_Activity.class);
+                startActivity(i);
                 Toast.makeText(MainActivity.this, "Login Sucessfully.....", Toast.LENGTH_SHORT).show();
             /*    ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);
                 Intent i2 = new Intent(MainActivity.this,LoginSuccessActivity.class);

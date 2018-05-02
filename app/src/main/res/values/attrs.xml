@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SpaceTabLayout">
+        <attr name="number_of_tabs">
+            <enum name="three" value="3" />
+            <enum name="four" value="4" />
+            <enum name="five" value="5" />
+            <enum name="three_IconOnly" value="0" />
+        </attr>
+
+        <attr name="starting_position">
+            <enum name="one" value="0"/>
+            <enum name="two" value="1"/>
+            <enum name="three" value="2"/>
+            <enum name="four" value="3"/>
+            <enum name="five" value="4"/>
+        </attr>
+
+        <attr name="tab_color" format="color" />
+        <attr name="button_color" format="color" />
+        <attr name="text_color" format="color" />
+
+        <attr name="icon_one" format="reference" />
+        <attr name="icon_two" format="reference" />
+        <attr name="icon_three" format="reference" />
+        <attr name="icon_four" format="reference" />
+        <attr name="icon_five" format="reference" />
+
+        <attr name="text_one" format="string" />
+        <attr name="text_two" format="string" />
+        <attr name="text_three" format="string" />
+    </declare-styleable>
+
+</resources>

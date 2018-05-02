@@ -16,17 +16,17 @@ import java.io.OutputStream;
 
 public class DatabaseCopy {
 
-    Context context;
+    private Context context;
 
-    String DB_file_path = "/data/data/com.example.i5.dbexample1/databases/Demoapp.sqlite";
+      String DB_file_path = "/data/data/com.android.sudesi.schoolapp/databases/SchoolApp.sqlite";
    // String DB_file_path = context.getFilesDir().getPath();
-    String DB_name = "Demoapp.sqlite";
+    String DB_name = "SchoolApp.sqlite";
 
 
     public boolean copy(AssetManager am, Context mContext) {
         this.context = mContext;
         DB_file_path = "/data/data/" + context.getPackageName()
-                + "/databases/Demoapp.sqlite";
+                + "/databases/SchoolApp.sqlite";
         boolean isCopied = false;
         InputStream in = null;
         OutputStream out = null;
