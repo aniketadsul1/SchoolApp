@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,6 +20,11 @@ import com.android.sudesi.schoolapp.dbconfig.DbHelper;
 import com.android.sudesi.schoolapp.libs.Utils;
 import com.android.sudesi.schoolapp.model.StudentDetailModel;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,11 +50,6 @@ public class StudentActivity extends Activity {
         utils = new Utils(StudentActivity.this);
         studentDetailModelList = new ArrayList<>();
         studentDetailsArrayList = new ArrayList<>();
-
-        DatabaseCopy databaseCopy = new DatabaseCopy();
-        AssetManager assetManager = StudentActivity.this.getAssets();
-        databaseCopy.copy(assetManager, StudentActivity.this);
-        SchoolApp.dbCon = DataBaseCon.getInstance(getApplicationContext());
         dbHelper = new DbHelper(this);
     }
 
@@ -106,4 +107,8 @@ public class StudentActivity extends Activity {
             }
         });
     }
+
+
+
+
 }
