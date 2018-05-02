@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Home_Activity"/>
+        <activity android:name=".MyCalendarActivity"/>
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.StudentActivity" />
     </application>

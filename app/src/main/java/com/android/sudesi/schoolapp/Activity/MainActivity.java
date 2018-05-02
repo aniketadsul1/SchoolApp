@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.sudesi.schoolapp.Home_Activity;
+import com.android.sudesi.schoolapp.MyCalendarActivity;
 import com.android.sudesi.schoolapp.R;
 import com.android.sudesi.schoolapp.SchoolApp;
 import com.android.sudesi.schoolapp.dbconfig.DataBaseCon;
@@ -69,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
 
                 getWindow().setExitTransition(explode);
                 getWindow().setEnterTransition(explode);
-                Intent i=new Intent(MainActivity.this,Home_Activity.class);
+                 Intent i=new Intent(MainActivity.this,Home_Activity.class);
+               // Intent i=new Intent(MainActivity.this, MyCalendarActivity.class);
                 startActivity(i);
                 Toast.makeText(MainActivity.this, "Login Sucessfully.....", Toast.LENGTH_SHORT).show();
             /*    ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);
