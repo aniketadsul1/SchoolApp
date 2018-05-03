@@ -57,5 +57,11 @@
         <item>H</item>
     </string-array>
 
+    <string name="column_teacherDetails">TeacherDetails</string>
+    <string name="t_no">T_No</string>
+    <string name="t_name">T_Name</string>
+    <string name="t_std">Standard</string>
+    <string name="t_div">Division</string>
+    <string name="t_subject">Subject</string>
 
 </resources>

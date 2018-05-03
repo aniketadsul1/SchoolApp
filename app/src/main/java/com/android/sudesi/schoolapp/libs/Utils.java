@@ -24,6 +24,7 @@ public class Utils {
     public static String KEY_LEAD_DATA = "lead_data";
     public String[] column_studentDetails = new String[50];
     public String[] column_parentDetails = new String[50];
+    public String[] column_teacherDetails = new String[50];
 
     public Utils(Context mContext) {
 
@@ -42,6 +43,12 @@ public class Utils {
                 mContext.getString(R.string.P_MobNo)};
 
         column_parentDetails = Arrays.copyOf(parentDetailsArray, parentDetailsArray.length);
+
+        //Teacher Details
+        String[] teacherDetailsArray = {mContext.getString(R.string.t_no), mContext.getString(R.string.t_name),
+                mContext.getString(R.string.t_std), mContext.getString(R.string.t_div), mContext.getString(R.string.t_subject)};
+
+        column_teacherDetails = Arrays.copyOf(teacherDetailsArray, teacherDetailsArray.length);
 
     }
 
