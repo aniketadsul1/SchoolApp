@@ -10,6 +10,20 @@ public class StudentDetailModel implements Serializable {
     private String rollNo;
     private String name;
     private String dob;
+
+    public StudentDetailModel(String rollNo, String name, String dob, String address, String parent_MobNo, String standard, String division) {
+        this.rollNo = rollNo;
+        this.name = name;
+        this.dob = dob;
+        this.address = address;
+        Parent_MobNo = parent_MobNo;
+        this.standard = standard;
+        this.division = division;
+    }
+    public StudentDetailModel(){
+
+    }
+
     private String address;
     private String Parent_MobNo;
     private String standard;
