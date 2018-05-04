@@ -82,7 +82,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.15"
-
+            android:textColor="@color/black"
             android:gravity="center"
             android:text="Sun"
             />
@@ -91,7 +91,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.14"
-
+            android:textColor="@color/black"
             android:gravity="center"
             android:text="Mon"
             />
@@ -100,7 +100,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.14"
-
+            android:textColor="@color/black"
             android:gravity="center"
             android:text="Tue"
             />
@@ -109,7 +109,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.14"
-
+            android:textColor="@color/black"
             android:gravity="center"
             android:text="Wed"
              />
@@ -118,7 +118,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.14"
-
+            android:textColor="@color/black"
             android:gravity="center"
             android:text="Thu"
             />
@@ -129,13 +129,14 @@
             android:layout_weight="0.14"
             android:gravity="center"
             android:text="Fri"
+            android:textColor="@color/black"
             />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.15"
-
+            android:textColor="@color/black"
             android:gravity="center"
             android:text="Sat"
            />

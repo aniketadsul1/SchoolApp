@@ -21,6 +21,12 @@
     <string name="std">Standard</string>
     <string name="div">Division</string>
 
+
+    <string name="column_attendanceDetails">Attendance_Details</string>
+    <string name="date1">date</string>
+    <string name="attendance">attendance</string>
+
+
     <string name="column_parentDetails">ParentDetails</string>
     <string name="P_Name">Name</string>
     <string name="P_address">Address</string>

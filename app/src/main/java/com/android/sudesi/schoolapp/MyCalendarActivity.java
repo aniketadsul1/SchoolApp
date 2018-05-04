@@ -2,6 +2,9 @@ package com.android.sudesi.schoolapp;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -14,7 +17,10 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +32,12 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.sudesi.schoolapp.Adapter.StudentDetailsAdapter;
+import com.android.sudesi.schoolapp.dbconfig.DbHelper;
+import com.android.sudesi.schoolapp.model.AttendanceDetailsModel;
+import com.android.sudesi.schoolapp.model.StudentDetailModel;
 
 @TargetApi(3)
 public class MyCalendarActivity extends Activity implements OnClickListener {
@@ -40,6 +52,10 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 	private Calendar _calendar;
 	@SuppressLint("NewApi")
 	private int month, year;
+	AttendanceDetailsModel attendanceDetailsModel,attendanceDetailsModel1;
+	private List<AttendanceDetailsModel> attendanceDetailsModelList;
+	private List<AttendanceDetailsModel> attendanceDetailsModelList1;
+
 
 	@SuppressWarnings("unused")
 	@SuppressLint({ "NewApi", "NewApi", "NewApi", "NewApi" })
@@ -327,6 +343,7 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 			return position;
 		}
 
+		@RequiresApi(api = Build.VERSION_CODES.O)
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			View row = convertView;
@@ -344,9 +361,9 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 
 			Log.d(tag, "Current Day: " + getCurrentDayOfMonth());
 			String[] day_color = list.get(position).split("-");
-			String theday = day_color[0];
-			String themonth = day_color[2];
-			String theyear = day_color[3];
+			final String theday = day_color[0];
+			final String themonth = day_color[2];
+			final String theyear = day_color[3];
 			if ((!eventsPerMonthMap.isEmpty()) && (eventsPerMonthMap != null)) {
 				if (eventsPerMonthMap.containsKey(theday)) {
 					num_events_per_day = (TextView) row
@@ -356,7 +373,20 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 				}
 			}
 
+
+
+
+
+
+
+
 			// Set the Day GridCell
+			gridcell.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					Toast.makeText(_context, "text"+theday + "-" + themonth + "-" + theyear, Toast.LENGTH_SHORT).show();
+				}
+			});
 			gridcell.setText(theday);
 			gridcell.setTag(theday + "-" + themonth + "-" + theyear);
 			Log.d(tag, "Setting GridCell " + theday + "-" + themonth + "-"
@@ -364,15 +394,120 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 
 			if (day_color[1].equals("GREY")) {
 				gridcell.setTextColor(getResources()
-						.getColor(R.color.lightgray));
+						.getColor(R.color.lightgray02));
 			}
 			if (day_color[1].equals("WHITE")) {
 				gridcell.setTextColor(getResources().getColor(
-						R.color.lightgray02));
+						R.color.black));
 			}
 			if (day_color[1].equals("BLUE")) {
 				gridcell.setTextColor(getResources().getColor(R.color.orrange));
 			}
+
+
+
+
+			attendanceDetailsModelList=new ArrayList<AttendanceDetailsModel>();
+			String where = " where attedance = 'P'";
+			Cursor cursor = SchoolApp.dbCon.fetchFromSelect(DbHelper.TABLE_DB_ATTENDANCE, where);
+			if (cursor != null && cursor.getCount() > 0) {
+				cursor.moveToFirst();
+				do {
+					attendanceDetailsModel = createrattendancemodel(cursor);
+					attendanceDetailsModelList.add(attendanceDetailsModel);
+				} while (cursor.moveToNext());
+				cursor.close();
+
+			} else {
+				Toast.makeText(getApplicationContext(), "No data found..!", Toast.LENGTH_SHORT).show();
+			}
+			for (int i=0;i<attendanceDetailsModelList.size();i++){
+				String date1;
+				String attendance;
+				final AttendanceDetailsModel attendanceDetailsModel = attendanceDetailsModelList.get(i);
+
+				String dateStr = attendanceDetailsModel.getDate1();
+				SimpleDateFormat srcDf = new SimpleDateFormat("MM/dd/yyyy");
+
+				Date date = null;
+				try {
+					date = srcDf.parse(dateStr);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+				SimpleDateFormat destDf = new SimpleDateFormat("d-MMMM-yyyy");
+
+				date1 = destDf.format(date);
+
+				//date1=convertDate(attendanceDetailsModel.getDate1());
+
+
+				attendance=attendanceDetailsModel.getAttendance();
+				String[] dateParts = date1.split("-");
+				String day = dateParts[0];
+				String month = dateParts[1];
+				String year=dateParts[2];
+				if (day.equals(theday)&& themonth.equals(month)&& theyear.equals(year)){
+					gridcell.setTextColor(getResources().getColor(R.color.white));
+                    gridcell.setBackgroundColor(getResources().getColor(R.color.Green));
+
+
+                }
+
+			}
+
+
+
+			attendanceDetailsModelList1=new ArrayList<AttendanceDetailsModel>();
+			String where1 = " where attedance = 'A'";
+			Cursor cursor1 = SchoolApp.dbCon.fetchFromSelect(DbHelper.TABLE_DB_ATTENDANCE, where1);
+			if (cursor1 != null && cursor1.getCount() > 0) {
+				cursor1.moveToFirst();
+				do {
+					attendanceDetailsModel1 = createrattendancemodel1(cursor1);
+					attendanceDetailsModelList1.add(attendanceDetailsModel1);
+				} while (cursor1.moveToNext());
+				cursor1.close();
+
+			} else {
+				Toast.makeText(getApplicationContext(), "No data found..!", Toast.LENGTH_SHORT).show();
+			}
+			for (int i=0;i<attendanceDetailsModelList1.size();i++){
+				String date1;
+				String attendance;
+				final AttendanceDetailsModel attendanceDetailsModel1 = attendanceDetailsModelList1.get(i);
+
+				String dateStr = attendanceDetailsModel1.getDate1();
+				SimpleDateFormat srcDf = new SimpleDateFormat("MM/dd/yyyy");
+
+				Date date = null;
+				try {
+					date = srcDf.parse(dateStr);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+				SimpleDateFormat destDf = new SimpleDateFormat("d-MMMM-yyyy");
+
+				date1 = destDf.format(date);
+
+				//date1=convertDate(attendanceDetailsModel.getDate1());
+
+
+				attendance=attendanceDetailsModel1.getAttendance();
+				String[] dateParts = date1.split("-");
+				String day = dateParts[0];
+				String month = dateParts[1];
+				String year=dateParts[2];
+				if (day.equals(theday)&& themonth.equals(month)&& theyear.equals(year)){
+					gridcell.setTextColor(getResources().getColor(R.color.white));
+					gridcell.setBackgroundColor(getResources().getColor(R.color.darkorrange));
+
+				}
+
+			}
+
+
+
 			return row;
 		}
 
@@ -405,5 +540,57 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 		public int getCurrentWeekDay() {
 			return currentWeekDay;
 		}
+	}
+
+
+	public AttendanceDetailsModel createrattendancemodel(Cursor cursor) {
+
+		attendanceDetailsModel = new AttendanceDetailsModel();
+		try {
+			attendanceDetailsModel.setDate1(cursor.getString(cursor.getColumnIndex("date")));
+			attendanceDetailsModel.setAttendance(cursor.getString(cursor.getColumnIndex("attendance")));
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return attendanceDetailsModel;
+
+	}
+
+	public AttendanceDetailsModel createrattendancemodel1(Cursor cursor) {
+
+		attendanceDetailsModel1 = new AttendanceDetailsModel();
+		try {
+			attendanceDetailsModel1.setDate1(cursor.getString(cursor.getColumnIndex("date")));
+			attendanceDetailsModel1.setAttendance(cursor.getString(cursor.getColumnIndex("attendance")));
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return attendanceDetailsModel1;
+
+	}
+
+
+	@RequiresApi(api = Build.VERSION_CODES.O)
+	private static String convertDate(String strDate)
+	{
+		//for strdate = 2017 July 25
+
+		DateTimeFormatter f = new DateTimeFormatterBuilder().appendPattern("MM/dd/yyyy")
+				.toFormatter();
+
+		LocalDate parsedDate = LocalDate.parse(strDate);
+		DateTimeFormatter f2 = DateTimeFormatter.ofPattern("d-MMMM-yyyy");
+
+		String newDate = parsedDate.format(f2);
+
+		return newDate;
+
+
+
+
 	}
 }
