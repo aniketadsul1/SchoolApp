@@ -6,7 +6,7 @@
     android:weightSum="7">
 
     <TextView
-        android:id="@+id/roll_no"
+        android:id="@+id/roll_no1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -14,7 +14,7 @@
         android:text="Roll No" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/name1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -22,26 +22,9 @@
         android:text="Name"
         android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/dob"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="Date of Birth"
-        android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/address"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="Address"
-        android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/mobile_no"
+        android:id="@+id/mobile_no1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -49,18 +32,46 @@
         android:text="Parent Mobile No" />
 
     <TextView
-        android:id="@+id/standard"
+        android:id="@+id/standard1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
         android:text="Standard" />
+
     <TextView
-        android:id="@+id/division"
+        android:id="@+id/division1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
         android:text="Division" />
+
+
+
+        <RadioButton
+            android:id="@+id/present"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:gravity="center"
+            android:text="Present" />
+
+        <RadioButton
+            android:id="@+id/absent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Absent" />
+
+    <!--   <TextView
+           android:id="@+id/mark_attendance"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:gravity="center"
+           android:text="Mark Attendance" />-->
 
 </LinearLayout>

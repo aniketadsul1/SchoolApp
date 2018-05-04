@@ -29,6 +29,16 @@ public class StudentDetailModel implements Serializable {
     private String standard;
     private String division;
 
+    public String getMark_attendance() {
+        return mark_attendance;
+    }
+
+    public void C(String mark_attendance) {
+        this.mark_attendance = mark_attendance;
+    }
+
+    private String mark_attendance;
+
     public String getRollNo() {
         return rollNo;
     }
