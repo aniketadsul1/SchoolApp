@@ -66,7 +66,6 @@ public class TeacherActivity extends Activity {
                     str_teacherDiv = edt_teacher_div.getText().toString().trim();
                     str_subject = edt_subject.getText().toString().trim();
 
-
                     if (!TextUtils.isEmpty(edt_teacher_no.getText().toString().trim()) && !TextUtils.isEmpty(edt_teacher_name.getText().toString().trim()) &&
                             !TextUtils.isEmpty(edt_teachr_std.getText().toString().trim()) && !TextUtils.isEmpty(edt_teacher_div.getText().toString().trim()) &&
                             !TextUtils.isEmpty(edt_subject.getText().toString().trim())) {
