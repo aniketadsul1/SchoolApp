@@ -1,34 +1,87 @@
 <LinearLayout android:layout_height="wrap_content"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/background"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView
+
+    <com.android.sudesi.schoolapp.CustomView.Customtextviews
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/_15sdp"
-        android:text="Select Standard" />
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Mark Attendance"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
+
+    <com.android.sudesi.schoolapp.CustomView.Customtextviews
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Select Standard"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@android:color/white"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_2sdp">
 
     <Spinner
         android:id="@+id/spin_standard1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
         android:entries="@array/standard"
         android:paddingTop="@dimen/_5sdp" />
+    </android.support.v7.widget.CardView>
 
-    <TextView
+    <com.android.sudesi.schoolapp.CustomView.Customtextviews
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/_15sdp"
-        android:text="Select Division" />
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Select Division"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@android:color/white"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_2sdp">
 
     <Spinner
         android:id="@+id/spin_division1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/division"
+        style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
         android:paddingTop="@dimen/_5sdp" />
+    </android.support.v7.widget.CardView>
 
-    <Button
+<!--    <Button
         android:id="@+id/btn_attendance"
         android:layout_width="@dimen/_110sdp"
         android:layout_height="@dimen/_35sdp"
@@ -37,5 +90,16 @@
         android:background="@drawable/bt_shape_2"
         android:stateListAnimator="@drawable/state_list_animator_z"
         android:text="Mark Attendance"
-        android:textColor="#2fa881" />
+        android:textColor="#2fa881" />-->
+
+    <Button
+        android:id="@+id/btn_attendance"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/button_shape"
+        android:layout_gravity="center_horizontal"
+        android:stateListAnimator="@drawable/state_list_animator_z"
+        android:text="Mark Attendance"
+        android:textColor="@color/white" />
 </LinearLayout>

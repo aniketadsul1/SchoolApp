@@ -31,4 +31,8 @@
         <attr name="text_three" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="ViewStyle">
+        <attr name="customFont" format="string" />
+    </declare-styleable>
+
 </resources>

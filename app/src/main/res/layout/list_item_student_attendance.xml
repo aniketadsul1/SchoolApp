@@ -47,7 +47,13 @@
         android:gravity="center"
         android:text="Division" />
 
-
+<RadioGroup
+    android:id="@+id/rg_attendance"
+    android:layout_width="0dp"
+    android:orientation="horizontal"
+    android:layout_weight="2"
+    android:weightSum="2"
+    android:layout_height="wrap_content">
 
         <RadioButton
             android:id="@+id/present"
@@ -65,7 +71,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Absent" />
-
+</RadioGroup>
     <!--   <TextView
            android:id="@+id/mark_attendance"
            android:layout_width="0dp"

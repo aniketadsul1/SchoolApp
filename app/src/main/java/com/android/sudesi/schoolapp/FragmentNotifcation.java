@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -34,7 +35,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentA extends Fragment {
+public class FragmentNotifcation extends Fragment {
     Spinner spin_standard,spin_division;
     ImageView ivImage;
     private Context mContext;
@@ -46,6 +47,7 @@ public class FragmentA extends Fragment {
     private List<StudentDetailModel> studentDetailModelList;
     Button btn_save;
     StudentDetailsAdapter studentDetailsAdapter;
+    LinearLayout header;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +70,7 @@ public class FragmentA extends Fragment {
 
         list_student=(ListView)rootview.findViewById(R.id.list_student);
         btn_save=(Button)rootview.findViewById(R.id.btn_save);
+        header=(LinearLayout)rootview.findViewById(R.id.header);
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +96,7 @@ public class FragmentA extends Fragment {
                     Toast.makeText(mContext, "No data found..!", Toast.LENGTH_SHORT).show();
                 }
                 studentDetailsAdapter = new StudentDetailsAdapter(mContext, studentDetailModelList);
+                header.setVisibility(View.VISIBLE);
                 list_student.setAdapter(studentDetailsAdapter);
                 setListViewHeightBasedOnItems(list_student);
                 studentDetailsAdapter.notifyDataSetChanged();

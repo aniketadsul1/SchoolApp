@@ -26,7 +26,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-public class FragmentD extends Fragment {
+public class FragmentAttendanceReport extends Fragment {
     TextView attendence;
 
     @Override

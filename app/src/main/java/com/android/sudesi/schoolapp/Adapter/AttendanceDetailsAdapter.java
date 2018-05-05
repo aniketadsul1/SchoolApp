@@ -60,6 +60,7 @@ public class AttendanceDetailsAdapter extends BaseAdapter {
 
             viewHolder.rb_present = (RadioButton) convertView.findViewById(R.id.present);
             viewHolder.rb_absent = (RadioButton) convertView.findViewById(R.id.absent);
+            viewHolder.rg_attendance=(RadioGroup)convertView.findViewById(R.id.rg_attendance);
 
 
             convertView.setTag(viewHolder);
@@ -72,7 +73,7 @@ public class AttendanceDetailsAdapter extends BaseAdapter {
         viewHolder.mobile_no.setText(studentDetailModel.getParent_MobNo());
         viewHolder.standard.setText(studentDetailModel.getStandard());
         viewHolder.division.setText(studentDetailModel.getDivision());
-        viewHolder.rb_present.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+/*        viewHolder.rb_present.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (viewHolder.rb_present.isChecked()) {
@@ -87,7 +88,7 @@ public class AttendanceDetailsAdapter extends BaseAdapter {
                     viewHolder.rb_present.setChecked(false);
                 }
             }
-        });
+        });*/
 
 
 
@@ -97,6 +98,7 @@ public class AttendanceDetailsAdapter extends BaseAdapter {
     public class ViewHolder {
         private TextView roll_no, name, mobile_no, standard, division;
         private RadioButton rb_present, rb_absent;
+        private RadioGroup rg_attendance;
     }
 }
 
