@@ -31,6 +31,7 @@
     <string name="P_Name">Name</string>
     <string name="P_address">Address</string>
     <string name="P_MobNo">Mobile_Number</string>
+
     <string-array name="announcement_type">
         <item>Activity/Homework</item>
         <item>Holiday Annoucement</item>

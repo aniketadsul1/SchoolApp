@@ -73,7 +73,7 @@ public class TeacherActivity extends Activity {
 
                         String valuesArray[] = {str_teacherNo, str_teacherName, str_teacherStd, str_teacherDiv, str_subject};
                         String[] selectionArgs = {str_teacherNo};//
-                        String selection = "Teacher_No" + " = ?";
+                        String selection = "T_No" + " = ?";
                         boolean result = SchoolApp.dbCon.updateBulk(DbHelper.TABLE_DB_TEACHER, selection, valuesArray, utils.column_teacherDetails, selectionArgs);
                         if (result) {
                             Toast.makeText(mContext, "Data inserted Successfully", Toast.LENGTH_SHORT).show();

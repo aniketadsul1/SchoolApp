@@ -71,9 +71,9 @@ public class ParentActivity extends Activity {
                 if (!TextUtils.isEmpty(edt_name_parent.getText().toString().trim()) && !TextUtils.isEmpty(edt_address_parent.getText().toString().trim()) &&
                         !TextUtils.isEmpty(edt_Mob_no.getText().toString().trim())) {
                     String valuesArray[] = {str_P_name, str_P_address, str_P_mobNo};
-                    String[] selectionArgs = {str_P_name, str_P_address, str_P_mobNo};//
-                    String selection = "P_name" + " = ?";
-                    boolean result = SchoolApp.dbCon.update(DbHelper.TABLE_DB_SCHOOL, selection, valuesArray, utils.column_parentDetails, selectionArgs);
+                    String[] selectionArgs = {str_P_name/*, str_P_address, str_P_mobNo*/};//
+                    String selection = "Name" + " = ?";
+                    boolean result = SchoolApp.dbCon.update(DbHelper.TABLE_DB_PARENT, selection, valuesArray, utils.column_parentDetails, selectionArgs);
                     if (result) {
                         Toast.makeText(mContext, "Data inserted Successfully", Toast.LENGTH_SHORT).show();
                         edt_name_parent.setText("");
