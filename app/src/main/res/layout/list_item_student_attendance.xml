@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_30sdp"
     android:orientation="horizontal"
-    android:weightSum="7">
+    android:weightSum="8">
 
     <TextView
         android:id="@+id/roll_no1"
@@ -46,6 +46,13 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="Division" />
+    <TextView
+        android:id="@+id/todays_date"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="" />
 
 <RadioGroup
     android:id="@+id/rg_attendance"
@@ -60,7 +67,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:checked="true"
             android:gravity="center"
             android:text="Present" />
 

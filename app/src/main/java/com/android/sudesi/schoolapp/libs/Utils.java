@@ -25,6 +25,7 @@ public class Utils {
     public String[] column_studentDetails = new String[50];
     public String[] column_parentDetails = new String[50];
     public String[] column_teacherDetails = new String[50];
+    public String[] column_mark_attendanceDetails = new String[50];
 
     public Utils(Context mContext) {
 
@@ -49,6 +50,8 @@ public class Utils {
                 mContext.getString(R.string.t_std), mContext.getString(R.string.t_div), mContext.getString(R.string.t_subject)};
 
         column_teacherDetails = Arrays.copyOf(teacherDetailsArray, teacherDetailsArray.length);
+        String[] mark_attendanceDetailsArrays = {"roll_no", "name", "mobile_no", "standard", "division", "date", "mark_attendance"};
+        column_mark_attendanceDetails = Arrays.copyOf(mark_attendanceDetailsArrays, mark_attendanceDetailsArrays.length);
 
     }
 

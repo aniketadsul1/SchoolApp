@@ -24,6 +24,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String TABLE_DB_PARENT = "ParentDetails";
     public static final String TABLE_DB_TEACHER = "TeacherDetails";
     public static final String TABLE_DB_ATTENDANCE="Attendance_details";
+    public static final String TABLE_DB_MARK_DAILYATTENDANCE="MarkDailyAttendance";
 
     public static final String TABLE_DIRECT_LEAD_CATEGORY_DTLS = "tabel_direct_lead_category_dtls";
     public static final String TABLE_DIRECT_LEAD = "table_Direct_lead";

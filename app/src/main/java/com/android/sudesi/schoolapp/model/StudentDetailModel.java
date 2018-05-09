@@ -11,6 +11,20 @@ public class StudentDetailModel implements Serializable {
     private String name;
     private String dob;
 
+    public String getTodaysAttendance() {
+        return todaysAttendance;
+    }
+
+    public void setTodaysAttendance(String todaysAttendance) {
+        this.todaysAttendance = todaysAttendance;
+    }
+
+    public void setMark_attendance(String mark_attendance) {
+        this.mark_attendance = mark_attendance;
+    }
+
+    private String todaysAttendance;
+
     public StudentDetailModel(String rollNo, String name, String dob, String address, String parent_MobNo, String standard, String division) {
         this.rollNo = rollNo;
         this.name = name;
@@ -19,6 +33,7 @@ public class StudentDetailModel implements Serializable {
         Parent_MobNo = parent_MobNo;
         this.standard = standard;
         this.division = division;
+        this.todaysAttendance=todaysAttendance;
     }
     public StudentDetailModel(){
 
