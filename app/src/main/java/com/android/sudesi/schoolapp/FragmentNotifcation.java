@@ -5,8 +5,11 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -36,7 +39,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentNotifcation extends Fragment {
-    Spinner spin_standard,spin_division;
+    Spinner spin_standard, spin_division;
     ImageView ivImage;
     private Context mContext;
     private List<String> StudentDetailsArrayList;
@@ -48,6 +51,8 @@ public class FragmentNotifcation extends Fragment {
     Button btn_save;
     StudentDetailsAdapter studentDetailsAdapter;
     LinearLayout header;
+    private InternetBroadcast internetBroadcast;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,31 +62,34 @@ public class FragmentNotifcation extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView=inflater.inflate(R.layout.fragment_a, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_a, container, false);
         init(rootView);
+        internetBroadcast = new InternetBroadcast();
+        registerNetworkBroadcastForNougat();
         return rootView;
-    }
-    private void init(View rootview){
-        StudentDetailsArrayList=new ArrayList<>();
-        studentDetailModelList=new ArrayList<StudentDetailModel>();
-        spin_standard=(Spinner)rootview.findViewById(R.id.spin_standard);
-        spin_division=(Spinner)rootview.findViewById(R.id.spin_division);
-        ivImage=(ImageView)rootview.findViewById(R.id.ivImage);
 
-        list_student=(ListView)rootview.findViewById(R.id.list_student);
-        btn_save=(Button)rootview.findViewById(R.id.btn_save);
-        header=(LinearLayout)rootview.findViewById(R.id.header);
+    }
+
+    private void init(View rootview) {
+        StudentDetailsArrayList = new ArrayList<>();
+        studentDetailModelList = new ArrayList<StudentDetailModel>();
+        spin_standard = (Spinner) rootview.findViewById(R.id.spin_standard);
+        spin_division = (Spinner) rootview.findViewById(R.id.spin_division);
+        ivImage = (ImageView) rootview.findViewById(R.id.ivImage);
+
+        list_student = (ListView) rootview.findViewById(R.id.list_student);
+        btn_save = (Button) rootview.findViewById(R.id.btn_save);
+        header = (LinearLayout) rootview.findViewById(R.id.header);
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String std=spin_standard.getSelectedItem().toString();
-                String div=spin_division.getSelectedItem().toString();
+                String std = spin_standard.getSelectedItem().toString();
+                String div = spin_division.getSelectedItem().toString();
 
 
-
-                String where = " where Standard = '"+std+"' and Division = '"+div+"'";
+                String where = " where Standard = '" + std + "' and Division = '" + div + "'";
                 Cursor cursor = SchoolApp.dbCon.fetchFromSelect(DbHelper.TABLE_DB_SCHOOL, where);
                 if (cursor != null && cursor.getCount() > 0) {
                     cursor.moveToFirst();
@@ -115,24 +123,24 @@ public class FragmentNotifcation extends Fragment {
 
 
     private void selectImage() {
-        final CharSequence[] items = { "Take Photo", "Choose from Library",
-                "Cancel" };
+        final CharSequence[] items = {"Take Photo", "Choose from Library",
+                "Cancel"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Add Photo!");
         builder.setItems(items, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int item) {
-                boolean result=Utility.checkPermission(getContext());
+                boolean result = Utility.checkPermission(getContext());
 
                 if (items[item].equals("Take Photo")) {
-                    userChoosenTask ="Take Photo";
-                    if(result)
+                    userChoosenTask = "Take Photo";
+                    if (result)
                         cameraIntent();
 
                 } else if (items[item].equals("Choose from Library")) {
-                    userChoosenTask ="Choose from Library";
-                    if(result)
+                    userChoosenTask = "Choose from Library";
+                    if (result)
                         galleryIntent();
 
                 } else if (items[item].equals("Cancel")) {
@@ -144,16 +152,14 @@ public class FragmentNotifcation extends Fragment {
     }
 
 
-    private void galleryIntent()
-    {
+    private void galleryIntent() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);//
-        startActivityForResult(Intent.createChooser(intent, "Select File"),SELECT_FILE);
+        startActivityForResult(Intent.createChooser(intent, "Select File"), SELECT_FILE);
     }
 
-    private void cameraIntent()
-    {
+    private void cameraIntent() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, REQUEST_CAMERA);
     }
@@ -196,7 +202,7 @@ public class FragmentNotifcation extends Fragment {
     @SuppressWarnings("deprecation")
     private void onSelectFromGalleryResult(Intent data) {
 
-        Bitmap bm=null;
+        Bitmap bm = null;
         if (data != null) {
             try {
                 bm = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), data.getData());
@@ -207,7 +213,6 @@ public class FragmentNotifcation extends Fragment {
 
         ivImage.setImageBitmap(bm);
     }
-
 
 
     public StudentDetailModel createrstudentmodel(Cursor cursor) {
@@ -262,5 +267,22 @@ public class FragmentNotifcation extends Fragment {
             return false;
         }
 
+    }
+
+    private void registerNetworkBroadcastForNougat() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            mContext.registerReceiver(internetBroadcast, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            mContext.registerReceiver(internetBroadcast, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        }
+    }
+
+    protected void unregisterNetworkChanges() {
+        try {
+            mContext.unregisterReceiver(internetBroadcast);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
     }
 }
