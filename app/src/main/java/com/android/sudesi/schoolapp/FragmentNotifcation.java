@@ -26,6 +26,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.sudesi.schoolapp.Activity.MainActivity;
 import com.android.sudesi.schoolapp.Adapter.StudentDetailsAdapter;
 import com.android.sudesi.schoolapp.SweetAlert.SweetAlertDialog;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
@@ -153,7 +154,14 @@ public class FragmentNotifcation extends Fragment {
                                         .setConfirmText("OK")
                                         .showCancelButton(false)
                                         .setCancelClickListener(null)
-                                        .setConfirmClickListener(null)
+                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                            @Override
+                                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                Intent i = new Intent(mContext,MainActivity.class);
+                                                startActivity(i);
+                                                sweetAlertDialog.dismiss();
+                                            }
+                                        })
                                         .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
                             }
                         })
@@ -161,8 +169,7 @@ public class FragmentNotifcation extends Fragment {
                         /*.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
-                              Intent i = new Intent(mContext,FragmentNotifcation.class);
-                              startActivity(i);
+
                             }
                         })*/
 
