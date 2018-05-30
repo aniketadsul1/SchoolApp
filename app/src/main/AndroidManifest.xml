@@ -42,6 +42,8 @@
         <activity
             android:name=".Activity.AttendanceMarkActivity"
             android:screenOrientation="landscape" />
+        <activity android:name=".Activity.TimetableActivity"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
