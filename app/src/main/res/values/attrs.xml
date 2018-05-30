@@ -9,11 +9,11 @@
         </attr>
 
         <attr name="starting_position">
-            <enum name="one" value="0"/>
-            <enum name="two" value="1"/>
-            <enum name="three" value="2"/>
-            <enum name="four" value="3"/>
-            <enum name="five" value="4"/>
+            <enum name="one" value="0" />
+            <enum name="two" value="1" />
+            <enum name="three" value="2" />
+            <enum name="four" value="3" />
+            <enum name="five" value="4" />
         </attr>
 
         <attr name="tab_color" format="color" />
@@ -33,6 +33,31 @@
 
     <declare-styleable name="ViewStyle">
         <attr name="customFont" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="Rotate3dAnimation">
+        <attr name="rollType" format="enum">
+            <enum name="x" value="0" />
+            <enum name="y" value="1" />
+            <enum name="z" value="2" />
+        </attr>
+        <attr name="fromDeg" format="float" />
+        <attr name="toDeg" format="float" />
+        <attr name="pivotX" format="fraction" />
+        <attr name="pivotY" format="fraction" />
     </declare-styleable>
 
 </resources>

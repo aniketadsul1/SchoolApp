@@ -5,6 +5,16 @@
     android:background="@color/background"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <ImageButton
+        android:id="@+id/logoutBtn"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/logoutimg" />
+
     <Button
         android:id="@+id/btn_timetable"
         android:layout_width="wrap_content"

@@ -27,6 +27,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.sudesi.schoolapp.Adapter.StudentDetailsAdapter;
+import com.android.sudesi.schoolapp.SweetAlert.SweetAlertDialog;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
 import com.android.sudesi.schoolapp.model.StudentDetailModel;
 
@@ -40,7 +41,7 @@ import java.util.List;
 
 public class FragmentNotifcation extends Fragment {
     Spinner spin_standard, spin_division;
-    ImageView ivImage;
+    ImageView ivImage, logoutBtn;
     private Context mContext;
     private List<String> StudentDetailsArrayList;
     private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
@@ -76,6 +77,7 @@ public class FragmentNotifcation extends Fragment {
         spin_standard = (Spinner) rootview.findViewById(R.id.spin_standard);
         spin_division = (Spinner) rootview.findViewById(R.id.spin_division);
         ivImage = (ImageView) rootview.findViewById(R.id.ivImage);
+        logoutBtn = (ImageView) rootview.findViewById(R.id.logoutBtn);
 
         list_student = (ListView) rootview.findViewById(R.id.list_student);
         btn_save = (Button) rootview.findViewById(R.id.btn_save);
@@ -119,8 +121,56 @@ public class FragmentNotifcation extends Fragment {
             }
         });
 
-    }
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new SweetAlertDialog(getActivity(), SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Are you sure you want to Logout?")
+//                        .setContentText("Won't be able to recover this file!")
+                        .setCancelText("No")
+                        .setConfirmText("Yes")
+                        .showCancelButton(true)
+                        .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                // reuse previous dialog instance, keep widget user state, reset them if you need
+                               /* sDialog.setTitleText("Cancelled!")
+                                        .setContentText("Your imaginary file is safe :)")
+                                        .setConfirmText("OK")
+                                        .showCancelButton(false)
+                                        .setCancelClickListener(null)
+                                        .setConfirmClickListener(null)
+                                        .changeAlertType(SweetAlertDialog.ERROR_TYPE);*/
 
+                                sDialog.dismiss();
+                            }
+                        })
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.setTitleText("Log out!")
+                                        .setContentText("You are Logged out successfully")
+                                        .setConfirmText("OK")
+                                        .showCancelButton(false)
+                                        .setCancelClickListener(null)
+                                        .setConfirmClickListener(null)
+                                        .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
+                            }
+                        })
+
+                        /*.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                              Intent i = new Intent(mContext,FragmentNotifcation.class);
+                              startActivity(i);
+                            }
+                        })*/
+
+
+                        .show();
+            }
+        });
+    }
 
     private void selectImage() {
         final CharSequence[] items = {"Take Photo", "Choose from Library",
@@ -285,4 +335,5 @@ public class FragmentNotifcation extends Fragment {
             e.printStackTrace();
         }
     }
+
 }

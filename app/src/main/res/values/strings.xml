@@ -72,4 +72,26 @@
     <string name="t_subject">Subject</string>
     <string name="school_features">New Horizon Public School and Penguin Kids, a temple of learning and an abode of strong foundation was established on 21st June 2007. The school has grown from a students’ strength of 1350 to more than 5000 students now. The school is driven by the motto, “Education to Excel”, which enables our students to achieve greater heights, through various avenues. We believe that every child studying in our school is a masterpiece and we empower our teachers to tap their both linear and lateral strengths into polished talents</string>
 
+    <string name="dialog_default_title">Here\'s a message!</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="LOADING">Loading...</string>
+    <string name="try_me">Try me!</string>
+    <string name="create_notification">Create Notification</string>
+    <string name="mark_attendance">Mark Attendance</string>
+    <string name="select_standard">Select Standard</string>
+    <string name="select_division">Select Division</string>
+    <string name="annoucement_type">Annoucement Type</string>
+    <string name="enter_message">Enter Message</string>
+    <string name="send_notification">Send Notification</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="standard">Standard</string>
+    <string name="division">Division</string>
+    <string name="roll_no">Roll No</string>
+    <string name="school_features1">School Features :</string>
+    <string name="about_school">About School</string>
+
+
+
 </resources>

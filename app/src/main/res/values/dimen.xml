@@ -3,13 +3,17 @@
    <!-- <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>-->
 
-    <dimen name="view_padding">5dp</dimen>
-    <dimen name="layout_padding">10dp</dimen>
-    <dimen name="layout_margin">10dp</dimen>
-    <dimen name="view_margin">5dp</dimen>
-    <dimen name="scrollview_bottom_margin">30dp</dimen>
+    <dimen name="alert_width">@dimen/_220sdp</dimen>
+    <dimen name="common_circle_width">@dimen/_2sdp</dimen>
+    <dimen name="progress_circle_radius">@dimen/_30sdp</dimen>
 
-    <dimen name="button_raduis">20dp</dimen>
+    <dimen name="view_padding">@dimen/_5sdp</dimen>
+    <dimen name="layout_padding">@dimen/_10sdp</dimen>
+    <dimen name="layout_margin">@dimen/_10sdp</dimen>
+    <dimen name="view_margin">@dimen/_5sdp</dimen>
+    <dimen name="scrollview_bottom_margin">@dimen/_30sdp</dimen>
+
+    <dimen name="button_raduis">@dimen/_20sdp</dimen>
 
     <dimen name="image_margin">40dip</dimen>
 
@@ -679,12 +683,8 @@
     <dimen name="_minus8sdp">-8.00dp</dimen>
     <dimen name="_minus9sdp">-9.00dp</dimen>
 
+    <dimen name="activity_horizontal_margin">@dimen/_16sdp</dimen>
+    <dimen name="activity_vertical_margin">@dimen/_16sdp</dimen>
 
-
-
-
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-
-    <dimen name="action_button_size">56dp</dimen>
+    <dimen name="action_button_size">@dimen/_56sdp</dimen>
 </resources>

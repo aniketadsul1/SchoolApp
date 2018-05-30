@@ -4,24 +4,44 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical">
-    <com.android.sudesi.schoolapp.CustomView.Customtextviews
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
         android:layout_marginTop="@dimen/_5sdp"
-        android:text="About School"
-        android:textColor="@color/black"
-        android:gravity="center_horizontal"
-        android:textSize="@dimen/_16sdp"
-        android:textStyle="bold" />
+        android:weightSum="2">
+
+        <com.android.sudesi.schoolapp.CustomView.Customtextviews
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_45sdp"            android:layout_marginRight="@dimen/_10sdp"
+            android:gravity="center_horizontal"
+            android:text="@string/about_school"
+            android:layout_weight="1.9"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/logoutBtn"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="0.1"
+            android:layout_gravity="right"
+            android:background="@drawable/logoutimg" />
+
+    </LinearLayout>
+
     <ImageView
-        android:src="@drawable/school12"
         android:layout_width="@dimen/_150sdp"
-        android:paddingTop="@dimen/_10sdp"
         android:layout_height="@dimen/_120sdp"
         android:layout_gravity="center"
-        />
+        android:paddingTop="@dimen/_10sdp"
+        android:src="@drawable/school12" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv"
@@ -35,18 +55,18 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_marginLeft="@dimen/_16sdp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_15sdp"
-            android:text="School Features :"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="@string/school_features1"
             android:textColor="@color/black"
             android:textSize="@dimen/_15sdp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/_16sdp"
             android:text="@string/school_features"
             android:textColor="@color/black"
             android:typeface="monospace" />
