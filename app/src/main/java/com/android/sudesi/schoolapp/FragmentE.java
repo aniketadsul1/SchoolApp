@@ -26,10 +26,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
+import com.android.sudesi.schoolapp.Activity.MainActivity;
 import com.android.sudesi.schoolapp.Activity.TimetableActivity;
+import com.android.sudesi.schoolapp.SweetAlert.SweetAlertDialog;
 
 public class FragmentE extends Fragment {
+
+    ImageView logoutBtn;
     Button btn_timetable;
     Context mContext;
 
@@ -41,19 +46,73 @@ public class FragmentE extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootview=inflater.inflate(R.layout.fragment_e, container, false);
-        btn_timetable=(Button)rootview.findViewById(R.id.btn_timetable);
+        View rootview = inflater.inflate(R.layout.fragment_e, container, false);
+        init(rootview);
+
+        return rootview;
+    }
+
+    private void init(View rootview) {
+
+        btn_timetable = (Button) rootview.findViewById(R.id.btn_timetable);
+        logoutBtn=(ImageView)rootview.findViewById(R.id.logoutBtn);
+
         btn_timetable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(mContext, TimetableActivity.class);
+                Intent i = new Intent(mContext, TimetableActivity.class);
                 startActivity(i);
 
             }
         });
 
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new SweetAlertDialog(getActivity(), SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Are you sure you want to Logout?")
+//                        .setContentText("Won't be able to recover this file!")
+                        .setCancelText("No")
+                        .setConfirmText("Yes")
+                        .showCancelButton(true)
+                        .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                // reuse previous dialog instance, keep widget user state, reset them if you need
+                               /* sDialog.setTitleText("Cancelled!")
+                                        .setContentText("Your imaginary file is safe :)")
+                                        .setConfirmText("OK")
+                                        .showCancelButton(false)
+                                        .setCancelClickListener(null)
+                                        .setConfirmClickListener(null)
+                                        .changeAlertType(SweetAlertDialog.ERROR_TYPE);*/
 
-        return rootview;
+                                sDialog.dismiss();
+                            }
+                        })
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.setTitleText("Log out!")
+                                        .setContentText("You are Logged out successfully")
+                                        .setConfirmText("OK")
+                                        .showCancelButton(false)
+                                        .setCancelClickListener(null)
+                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                            @Override
+                                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                Intent i = new Intent(mContext, MainActivity.class);
+                                                startActivity(i);
+                                                sweetAlertDialog.dismiss();
+                                            }
+                                        })
+                                        .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
+                            }
+                        })
+                        .show();
+            }
+        });
+
     }
 
 }

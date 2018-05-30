@@ -16,7 +16,8 @@
         <com.android.sudesi.schoolapp.CustomView.Customtextviews
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_45sdp"            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_45sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:gravity="center_horizontal"
             android:text="@string/about_school"
             android:layout_weight="1.9"
@@ -26,8 +27,8 @@
 
         <ImageButton
             android:id="@+id/logoutBtn"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_5sdp"
             android:layout_weight="0.1"

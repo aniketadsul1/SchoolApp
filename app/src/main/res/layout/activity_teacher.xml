@@ -38,7 +38,7 @@
                         android:layout_centerHorizontal="true"
                         android:backgroundTint="@android:color/transparent"
                         android:gravity="center"
-                        android:hint="Teacher No"
+                        android:hint="@string/teacher_no"
                         android:inputType="number"
                         android:maxLength="10"
                         android:textSize="@dimen/_8sdp" />
@@ -67,7 +67,7 @@
                         android:layout_centerHorizontal="true"
                         android:backgroundTint="@android:color/transparent"
                         android:gravity="center"
-                        android:hint="Teacher Name"
+                        android:hint="@string/teacher_name"
                         android:inputType="textPersonName"
                         android:maxLength="50"
                         android:textSize="@dimen/_8sdp" />
@@ -96,7 +96,7 @@
                         android:layout_centerHorizontal="true"
                         android:backgroundTint="@android:color/transparent"
                         android:gravity="center"
-                        android:hint="Standard"
+                        android:hint="@string/standard"
                         android:inputType="number"
                         android:maxLength="5"
                         android:textSize="@dimen/_8sdp" />
@@ -125,7 +125,7 @@
                         android:layout_centerHorizontal="true"
                         android:backgroundTint="@android:color/transparent"
                         android:gravity="center"
-                        android:hint="Division"
+                        android:hint="@string/division"
                         android:inputType="text"
                         android:maxLength="5"
                         android:textSize="@dimen/_8sdp" />
@@ -154,7 +154,7 @@
                         android:layout_centerHorizontal="true"
                         android:backgroundTint="@android:color/transparent"
                         android:gravity="center"
-                        android:hint="Subject"
+                        android:hint="@string/subject"
                         android:inputType="text"
                         android:maxLength="5"
                         android:textSize="@dimen/_8sdp" />

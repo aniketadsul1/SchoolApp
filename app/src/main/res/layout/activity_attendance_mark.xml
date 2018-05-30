@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mark Attendance"
         android:layout_gravity="center"
-        android:textColor="@color/black"/>
+        android:text="@string/mark_attendance"
+        android:textColor="@color/black" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +26,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
-            android:text="Roll No"
+            android:text="@string/roll_no"
             android:textAlignment="center"
             android:textStyle="bold" />
 
@@ -35,7 +37,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
-            android:text="Name"
+            android:text="@string/name"
             android:textAlignment="center"
             android:textStyle="bold" />
 
@@ -47,7 +49,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
-            android:text="Mobile No"
+            android:text="@string/mobile_no"
             android:textAlignment="center"
             android:textStyle="bold" />
 
@@ -57,16 +59,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
-            android:text="Standard"
-            android:textAlignment="center"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:paddingTop="@dimen/_5sdp"
-            android:text="Division"
+            android:text="@string/standard"
             android:textAlignment="center"
             android:textStyle="bold" />
 
@@ -76,25 +69,36 @@
             android:layout_weight="1"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
-            android:text="Date"
+            android:text="@string/division"
             android:textAlignment="center"
             android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/_5sdp"
+            android:text="@string/date1"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
-            android:text="Mark Attendance"
+            android:text="@string/mark_attendance"
             android:textAlignment="center"
             android:textStyle="bold" />
 
     </LinearLayout>
+
     <ListView
         android:id="@+id/list_student1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

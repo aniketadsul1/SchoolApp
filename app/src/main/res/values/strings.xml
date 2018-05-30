@@ -23,8 +23,8 @@
 
 
     <string name="column_attendanceDetails">Attendance_Details</string>
-    <string name="date1">date</string>
-    <string name="attendance">attendance</string>
+    <string name="date1">Date</string>
+    <string name="attendance">Attendance</string>
 
 
     <string name="column_parentDetails">ParentDetails</string>
@@ -75,7 +75,7 @@
     <string name="dialog_default_title">Here\'s a message!</string>
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">Cancel</string>
-    <string name="LOADING">Loading...</string>
+    <string name="LOADING">Loading…</string>
     <string name="try_me">Try me!</string>
     <string name="create_notification">Create Notification</string>
     <string name="mark_attendance">Mark Attendance</string>
@@ -91,7 +91,17 @@
     <string name="roll_no">Roll No</string>
     <string name="school_features1">School Features :</string>
     <string name="about_school">About School</string>
-
+    <string name="mobile_number">Mobile Number</string>
+    <string name="teacher_no">Teacher No</string>
+    <string name="teacher_name">Teacher Name</string>
+    <string name="subject">Subject</string>
+    <string name="time_table">Time Table</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
 
 
 </resources>

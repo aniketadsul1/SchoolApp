@@ -41,6 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentNotifcation extends Fragment {
+
     Spinner spin_standard, spin_division;
     ImageView ivImage, logoutBtn;
     private Context mContext;
@@ -157,7 +158,7 @@ public class FragmentNotifcation extends Fragment {
                                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                             @Override
                                             public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                                Intent i = new Intent(mContext,MainActivity.class);
+                                                Intent i = new Intent(mContext, MainActivity.class);
                                                 startActivity(i);
                                                 sweetAlertDialog.dismiss();
                                             }
@@ -165,18 +166,10 @@ public class FragmentNotifcation extends Fragment {
                                         .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
                             }
                         })
-
-                        /*.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                            @Override
-                            public void onClick(SweetAlertDialog sDialog) {
-
-                            }
-                        })*/
-
-
                         .show();
             }
         });
+
     }
 
     private void selectImage() {

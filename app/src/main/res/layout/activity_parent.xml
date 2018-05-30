@@ -34,7 +34,7 @@
                     android:layout_centerHorizontal="true"
                     android:backgroundTint="@android:color/transparent"
                     android:gravity="center"
-                    android:hint="Name"
+                    android:hint="@string/name"
                     android:inputType="textPersonName"
                     android:maxLength="50"
                     android:textSize="@dimen/_8sdp" />
@@ -63,7 +63,7 @@
                     android:layout_centerHorizontal="true"
                     android:backgroundTint="@android:color/transparent"
                     android:gravity="center"
-                    android:hint="Address"
+                    android:hint="@string/address"
                     android:inputType="text"
                     android:maxLength="150"
                     android:textSize="@dimen/_8sdp" />
@@ -92,7 +92,7 @@
                     android:layout_centerHorizontal="true"
                     android:backgroundTint="@android:color/transparent"
                     android:gravity="center"
-                    android:hint="Mobile Number"
+                    android:hint="@string/mobile_number"
                     android:inputType="number"
                     android:maxLength="10"
                     android:textSize="@dimen/_8sdp" />
