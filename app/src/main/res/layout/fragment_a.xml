@@ -5,7 +5,7 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/background"
         android:orientation="vertical">
 
@@ -13,8 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="horizontal"
             android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal"
             android:weightSum="2">
 
             <com.android.sudesi.schoolapp.CustomView.Customtextviews
@@ -22,22 +22,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_40sdp"
                 android:layout_weight="1.9"
                 android:gravity="center_horizontal"
                 android:text="@string/create_notification"
-                android:textColor="@color/black"
+                android:textColor="@color/warning_stroke_color"
                 android:textSize="@dimen/_16sdp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:typeface="monospace" />
 
             <ImageButton
                 android:id="@+id/logoutBtn"
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="right"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_weight="0.1"
-                android:layout_gravity="right"
                 android:background="@drawable/logoutimg" />
 
         </LinearLayout>
@@ -49,7 +50,7 @@
             android:layout_marginRight="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:text="@string/annoucement_type"
-            android:textColor="@color/black"
+            android:textColor="@color/red"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
 
@@ -81,7 +82,7 @@
             android:layout_marginRight="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:text="@string/select_standard"
-            android:textColor="@color/black"
+            android:textColor="@color/red"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
 
@@ -114,7 +115,7 @@
             android:layout_marginRight="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:text="@string/select_division"
-            android:textColor="@color/black"
+            android:textColor="@color/red"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
 
@@ -142,20 +143,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:orientation="vertical"
             android:padding="@dimen/_5sdp"
             android:paddingLeft="@dimen/_15sdp"
             android:paddingRight="@dimen/_15sdp">
 
-
             <ImageView
                 android:id="@+id/ivImage"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_100sdp"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
                 android:layout_gravity="center"
                 android:src="@drawable/camera" />
-
 
             <EditText
                 android:id="@+id/edt_message"
@@ -178,91 +177,100 @@
                 android:layout_marginTop="@dimen/_20sdp"
                 android:background="@drawable/button_shape"
                 android:stateListAnimator="@drawable/state_list_animator_z"
-                android:text="@string/send_notification" />
+                android:text="@string/send_notification"
+                android:textColor="@color/white" />
 
             <LinearLayout
                 android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal"
                 android:visibility="gone"
                 android:weightSum="7">
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:paddingTop="@dimen/_5sdp"
                     android:text="@string/roll_no"
                     android:textAlignment="center"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:paddingTop="@dimen/_5sdp"
                     android:text="@string/name"
                     android:textAlignment="center"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:paddingTop="@dimen/_5sdp"
                     android:text="@string/date_of_birth"
                     android:textAlignment="center"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:paddingTop="@dimen/_5sdp"
                     android:text="@string/address"
                     android:textAlignment="center"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:paddingTop="@dimen/_5sdp"
                     android:text="@string/mobile_no"
                     android:textAlignment="center"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:paddingTop="@dimen/_5sdp"
                     android:text="@string/standard"
                     android:textAlignment="center"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
-
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@color/colorPrimary"
                     android:gravity="center"
                     android:paddingTop="@dimen/_5sdp"
                     android:text="@string/division"
                     android:textAlignment="center"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -272,7 +280,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
 
     </LinearLayout>
 </ScrollView>

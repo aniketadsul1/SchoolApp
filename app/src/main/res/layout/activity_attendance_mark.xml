@@ -24,10 +24,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/roll_no"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
@@ -35,62 +37,73 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/name"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
 
         <TextView
-
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/mobile_no"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/standard"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/division"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/date1"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/mark_attendance"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
     </LinearLayout>

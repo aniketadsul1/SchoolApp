@@ -2,18 +2,16 @@ package com.android.sudesi.schoolapp.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.sudesi.schoolapp.Activity.StudentActivity;
 import com.android.sudesi.schoolapp.R;
 import com.android.sudesi.schoolapp.SchoolApp;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
@@ -63,6 +61,13 @@ public class AttendanceDetailsAdapter extends BaseAdapter {
         if (convertView == null) {
             viewHolder = new AttendanceDetailsAdapter.ViewHolder();
             convertView = inflater.inflate(R.layout.list_item_student_attendance, null);
+
+            if (position % 2 == 0) {
+                convertView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.background));
+            } else {
+                convertView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.background1));
+            }
+
             viewHolder.roll_no = (TextView) convertView.findViewById(R.id.roll_no1);
             viewHolder.name = (TextView) convertView.findViewById(R.id.name1);
             viewHolder.mobile_no = (TextView) convertView.findViewById(R.id.mobile_no1);

@@ -44,7 +44,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/_50sdp"
                     android:text="@string/login"
-                    android:textColor="@color/lgoin"
+                    android:textColor="@color/red"
                     android:textSize="@dimen/_13sdp"
                     android:textStyle="bold" />
             </RelativeLayout>
