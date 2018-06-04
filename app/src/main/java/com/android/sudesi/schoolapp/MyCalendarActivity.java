@@ -1,47 +1,12 @@
 package com.android.sudesi.schoolapp;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Context;
-import android.database.Cursor;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.text.format.DateFormat;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.android.sudesi.schoolapp.Adapter.StudentDetailsAdapter;
-import com.android.sudesi.schoolapp.dbconfig.DbHelper;
-import com.android.sudesi.schoolapp.model.AttendanceDetailsModel;
-import com.android.sudesi.schoolapp.model.StudentDetailModel;
 
 @TargetApi(3)
-public class MyCalendarActivity extends Activity implements OnClickListener {
-	private static final String tag = "MyCalendarActivity";
+public class MyCalendarActivity extends Activity/* implements OnClickListener */ {
+	/*private static final String tag = "MyCalendarActivity";
 
 	private TextView currentMonth;
 	private Button selectedDayMonthYearButton;
@@ -60,13 +25,15 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 	@SuppressWarnings("unused")
 	@SuppressLint({ "NewApi", "NewApi", "NewApi", "NewApi" })
 	private final DateFormat dateFormatter = new DateFormat();
-	private static final String dateTemplate = "MMMM yyyy";
+	private static final String dateTemplate = "MMMM yyyy";*/
 
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.my_calendar_view);
+    /**
+     * Called when the activity is first created.
+     */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+	/*	setContentView(R.layout.my_calendar_view);
 
 		_calendar = Calendar.getInstance(Locale.getDefault());
 		month = _calendar.get(Calendar.MONTH) + 1;
@@ -97,11 +64,11 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 		calendarView.setAdapter(adapter);
 	}
 
-	/**
-	 * 
-	 * @param month
-	 * @param year
-	 */
+	*//**
+         *
+         * @param month
+         * @param year
+         *//*
 	private void setGridCellAdapterToDate(int month, int year) {
 		adapter = new GridCellAdapter(getApplicationContext(),
 				R.id.calendar_day_gridcell, month, year);
@@ -211,12 +178,12 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 			return list.size();
 		}
 
-		/**
-		 * Prints Month
-		 * 
-		 * @param mm
-		 * @param yy
-		 */
+		*//**
+         * Prints Month
+         *
+         * @param mm
+         * @param yy
+         *//*
 		private void printMonth(int mm, int yy) {
 			Log.d(tag, "==> printMonth: mm: " + mm + " " + "yy: " + yy);
 			int trailingSpaces = 0;
@@ -321,16 +288,16 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 			}
 		}
 
-		/**
-		 * NOTE: YOU NEED TO IMPLEMENT THIS PART Given the YEAR, MONTH, retrieve
-		 * ALL entries from a SQLite database for that month. Iterate over the
-		 * List of All entries, and get the dateCreated, which is converted into
-		 * day.
-		 * 
-		 * @param year
-		 * @param month
-		 * @return
-		 */
+		*//**
+         * NOTE: YOU NEED TO IMPLEMENT THIS PART Given the YEAR, MONTH, retrieve
+         * ALL entries from a SQLite database for that month. Iterate over the
+         * List of All entries, and get the dateCreated, which is converted into
+         * day.
+         *
+         * @param year
+         * @param month
+         * @return
+         *//*
 		private HashMap<String, Integer> findNumberOfEventsPerMonth(int year,
 				int month) {
 			HashMap<String, Integer> map = new HashMap<String, Integer>();
@@ -590,7 +557,7 @@ public class MyCalendarActivity extends Activity implements OnClickListener {
 		return newDate;
 
 
+*/
 
-
-	}
+    }
 }
