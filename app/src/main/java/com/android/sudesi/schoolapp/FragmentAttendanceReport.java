@@ -19,6 +19,7 @@ package com.android.sudesi.schoolapp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
@@ -36,6 +37,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.sudesi.schoolapp.Activity.MainActivity;
+import com.android.sudesi.schoolapp.SweetAlert.SweetAlertDialog;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
 import com.android.sudesi.schoolapp.model.AttendanceDetailsModel;
 
@@ -58,7 +61,7 @@ public class FragmentAttendanceReport extends Fragment implements View.OnClickLi
     TextView attendence;
 
     private static final String tag = "MyCalendarActivity";
-
+    private ImageView logoutBtn;
     private TextView currentMonth;
     private Button selectedDayMonthYearButton;
     private ImageView prevMonth;
@@ -92,11 +95,12 @@ public class FragmentAttendanceReport extends Fragment implements View.OnClickLi
             }
         });*/
 
+        logoutBtn = (ImageView) rootView.findViewById(R.id.logoutBtn);
+
         _calendar = Calendar.getInstance(Locale.getDefault());
         month = _calendar.get(Calendar.MONTH) + 1;
         year = _calendar.get(Calendar.YEAR);
-        Log.d(tag, "Calendar Instance:= " + "Month: " + month + " " + "Year: "
-                + year);
+        Log.d(tag, "Calendar Instance:= " + "Month: " + month + " " + "Year: " + year);
 
         selectedDayMonthYearButton = (Button) rootView.findViewById(R.id.selectedDayMonthYear);
         selectedDayMonthYearButton.setText("Selected: ");
@@ -105,8 +109,7 @@ public class FragmentAttendanceReport extends Fragment implements View.OnClickLi
         prevMonth.setOnClickListener(this);
 
         currentMonth = (TextView) rootView.findViewById(R.id.currentMonth);
-        currentMonth.setText(DateFormat.format(dateTemplate,
-                _calendar.getTime()));
+        currentMonth.setText(DateFormat.format(dateTemplate, _calendar.getTime()));
 
         nextMonth = (ImageView) rootView.findViewById(R.id.nextMonth);
         nextMonth.setOnClickListener(this);
@@ -114,10 +117,56 @@ public class FragmentAttendanceReport extends Fragment implements View.OnClickLi
         calendarView = (GridView) rootView.findViewById(R.id.calendar);
 
         // Initialised
-        adapter = new GridCellAdapter(getContext(),
-                R.id.calendar_day_gridcell, month, year);
+        adapter = new GridCellAdapter(getContext(), R.id.calendar_day_gridcell, month, year);
         adapter.notifyDataSetChanged();
         calendarView.setAdapter(adapter);
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new SweetAlertDialog(getActivity(), SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Are you sure you want to Logout?")
+//                        .setContentText("Won't be able to recover this file!")
+                        .setCancelText("No")
+                        .setConfirmText("Yes")
+                        .showCancelButton(true)
+                        .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                // reuse previous dialog instance, keep widget user state, reset them if you need
+                               /* sDialog.setTitleText("Cancelled!")
+                                        .setContentText("Your imaginary file is safe :)")
+                                        .setConfirmText("OK")
+                                        .showCancelButton(false)
+                                        .setCancelClickListener(null)
+                                        .setConfirmClickListener(null)
+                                        .changeAlertType(SweetAlertDialog.ERROR_TYPE);*/
+
+                                sDialog.dismiss();
+                            }
+                        })
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.setTitleText("Log out!")
+                                        .setContentText("You are Logged out successfully")
+                                        .setConfirmText("OK")
+                                        .showCancelButton(false)
+                                        .setCancelClickListener(null)
+                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                            @Override
+                                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                Intent i = new Intent(getContext(), MainActivity.class);
+                                                startActivity(i);
+                                                sweetAlertDialog.dismiss();
+                                            }
+                                        })
+                                        .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
+                            }
+                        })
+                        .show();
+            }
+        });
 
         return rootView;
     }
@@ -372,8 +421,7 @@ public class FragmentAttendanceReport extends Fragment implements View.OnClickLi
         public View getView(int position, View convertView, ViewGroup parent) {
             View row = convertView;
             if (row == null) {
-                LayoutInflater inflater = (LayoutInflater) _context
-                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater inflater = (LayoutInflater) _context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 row = inflater.inflate(R.layout.screen_gridcell, parent, false);
             }
 
@@ -467,11 +515,9 @@ public class FragmentAttendanceReport extends Fragment implements View.OnClickLi
                     gridcell.setTextColor(getResources().getColor(R.color.white));
                     gridcell.setBackgroundColor(getResources().getColor(R.color.Green));
 
-
                 }
 
             }
-
 
             attendanceDetailsModelList1 = new ArrayList<AttendanceDetailsModel>();
             String where1 = " where attedance = 'A'";
@@ -507,7 +553,6 @@ public class FragmentAttendanceReport extends Fragment implements View.OnClickLi
 
                 //date1=convertDate(attendanceDetailsModel.getDate1());
 
-
                 attendance = attendanceDetailsModel1.getAttendance();
                 String[] dateParts = date1.split("-");
                 String day = dateParts[0];
@@ -520,7 +565,6 @@ public class FragmentAttendanceReport extends Fragment implements View.OnClickLi
                 }
 
             }
-
 
             return row;
         }
