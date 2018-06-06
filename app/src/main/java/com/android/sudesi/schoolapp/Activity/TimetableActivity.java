@@ -61,6 +61,7 @@ public class TimetableActivity extends Activity {
 
         timetableDetailsModel = new TimetableDetailsModel();
         try {
+            timetableDetailsModel.setTime(cursor.getString(cursor.getColumnIndex("time")));
             timetableDetailsModel.setMonday(cursor.getString(cursor.getColumnIndex("monday")));
             timetableDetailsModel.setTuesday(cursor.getString(cursor.getColumnIndex("tuesday")));
             timetableDetailsModel.setWednesday(cursor.getString(cursor.getColumnIndex("wednesday")));

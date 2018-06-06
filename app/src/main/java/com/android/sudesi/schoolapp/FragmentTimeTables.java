@@ -32,7 +32,7 @@ import com.android.sudesi.schoolapp.Activity.MainActivity;
 import com.android.sudesi.schoolapp.Activity.TimetableActivity;
 import com.android.sudesi.schoolapp.SweetAlert.SweetAlertDialog;
 
-public class FragmentE extends Fragment {
+public class FragmentTimeTables extends Fragment {
 
     ImageView logoutBtn;
     Button btn_timetable;

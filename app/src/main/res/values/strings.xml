@@ -96,6 +96,7 @@
     <string name="teacher_name">Teacher Name</string>
     <string name="subject">Subject</string>
     <string name="time_table">Time Table</string>
+    <string name="time">Time</string>
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
     <string name="wednesday">Wednesday</string>

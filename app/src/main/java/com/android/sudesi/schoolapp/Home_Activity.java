@@ -23,7 +23,7 @@ public class Home_Activity extends AppCompatActivity {
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new FragmentSchoolInfo());
         fragmentList.add(new FragmentMarkAttendance());
-        fragmentList.add(new FragmentE());
+        fragmentList.add(new FragmentTimeTables());
         fragmentList.add(new FragmentAttendanceReport());
         fragmentList.add(new FragmentNotifcation());
 

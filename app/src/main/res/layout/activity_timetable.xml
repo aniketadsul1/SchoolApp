@@ -14,15 +14,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
         android:orientation="horizontal"
         android:visibility="visible"
-        android:weightSum="6">
+        android:weightSum="7">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:gravity="center"
+            android:paddingTop="@dimen/_5sdp"
+            android:text="@string/time"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/monday"
@@ -34,7 +45,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/tuesday"
@@ -47,7 +57,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/wednesday"
@@ -59,7 +68,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/thursday"
@@ -71,7 +79,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/friday"
@@ -83,7 +90,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
             android:gravity="center"
             android:paddingTop="@dimen/_5sdp"
             android:text="@string/saturday"

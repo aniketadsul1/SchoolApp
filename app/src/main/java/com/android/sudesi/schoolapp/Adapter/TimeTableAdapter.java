@@ -51,11 +51,11 @@ public class TimeTableAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_item_timetable, null);
 
             if (i % 2 == 0) {
-                convertView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.background));
+                convertView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.background));
             } else {
-                convertView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.background1));
+                convertView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.background1));
             }
-
+            viewHolder.time = (TextView) convertView.findViewById(R.id.time);
             viewHolder.moday = (TextView) convertView.findViewById(R.id.monday);
             viewHolder.tuesday = (TextView) convertView.findViewById(R.id.tuesday);
             viewHolder.wednesday = (TextView) convertView.findViewById(R.id.wednesday);
@@ -69,6 +69,7 @@ public class TimeTableAdapter extends BaseAdapter {
             viewHolder = (TimeTableAdapter.ViewHolder) convertView.getTag();
         }
         final TimetableDetailsModel timetableDetailsModel = timetableDetailsModelList.get(i);
+        viewHolder.time.setText(timetableDetailsModel.getTime());
         viewHolder.moday.setText(timetableDetailsModel.getMonday());
         viewHolder.tuesday.setText(timetableDetailsModel.getTuesday());
         viewHolder.wednesday.setText(timetableDetailsModel.getWednesday());
@@ -80,7 +81,7 @@ public class TimeTableAdapter extends BaseAdapter {
 
     public class ViewHolder {
 
-        TextView moday, tuesday, wednesday, thursday, friday, saturday;
+        TextView moday, tuesday, wednesday, thursday, friday, saturday, time;
 
     }
 }

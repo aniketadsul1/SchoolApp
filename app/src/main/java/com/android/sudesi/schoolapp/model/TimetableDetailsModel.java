@@ -6,6 +6,16 @@ public class TimetableDetailsModel {
     String wednesday;
     String thursday;
     String friday;
+    String time;
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+
 
     public String getMonday() {
         return monday;

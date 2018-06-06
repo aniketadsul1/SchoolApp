@@ -3,7 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_30sdp"
     android:orientation="horizontal"
-    android:weightSum="6">
+    android:weightSum="7">
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        />
 
     <TextView
         android:id="@+id/monday"
