@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.android.sudesi.schoolapp.Activity.MainActivity;
 import com.android.sudesi.schoolapp.Adapter.StudentDetailsAdapter;
+import com.android.sudesi.schoolapp.SmileyToast.TastyToast;
 import com.android.sudesi.schoolapp.SweetAlert.SweetAlertDialog;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
 import com.android.sudesi.schoolapp.model.StudentDetailModel;
@@ -105,7 +106,7 @@ public class FragmentNotifcation extends Fragment {
                     cursor.close();
 
                 } else {
-                    Toast.makeText(mContext, "No data found..!", Toast.LENGTH_SHORT).show();
+                    TastyToast.makeText(getContext(), "No data found..!", TastyToast.LENGTH_LONG, TastyToast.ERROR);
                 }
                 studentDetailsAdapter = new StudentDetailsAdapter(mContext, studentDetailModelList);
                 header.setVisibility(View.VISIBLE);

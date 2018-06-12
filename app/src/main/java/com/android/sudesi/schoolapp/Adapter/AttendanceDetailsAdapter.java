@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.android.sudesi.schoolapp.R;
 import com.android.sudesi.schoolapp.SchoolApp;
+import com.android.sudesi.schoolapp.SmileyToast.TastyToast;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
 import com.android.sudesi.schoolapp.libs.Utils;
 import com.android.sudesi.schoolapp.model.StudentDetailModel;
@@ -63,9 +64,9 @@ public class AttendanceDetailsAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_item_student_attendance, null);
 
             if (position % 2 == 0) {
-                convertView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.background));
+                convertView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.background));
             } else {
-                convertView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.background1));
+                convertView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.background1));
             }
 
             viewHolder.roll_no = (TextView) convertView.findViewById(R.id.roll_no1);
@@ -94,14 +95,14 @@ public class AttendanceDetailsAdapter extends BaseAdapter {
         System.out.println("Current time => " + c);
 
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-     final String  str_todays_date = df.format(c);
+        final String str_todays_date = df.format(c);
         viewHolder.todays_date.setText(str_todays_date);
 
 
         viewHolder.rg_attendance.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-               RadioButton radioButton = (RadioButton)radioGroup.findViewById(i);
+                RadioButton radioButton = (RadioButton) radioGroup.findViewById(i);
             /*    final StudentDetailModel studentDetailModel1=new StudentDetailModel();
                 studentDetailModel1.setRollNo(studentDetailModel.getRollNo());
                 studentDetailModel1.setName(studentDetailModel.getParent_MobNo());
@@ -113,10 +114,10 @@ public class AttendanceDetailsAdapter extends BaseAdapter {
                 String valuesArray[] = {studentDetailModel.getRollNo(), studentDetailModel.getName(), studentDetailModel.getParent_MobNo(), studentDetailModel.getStandard(), studentDetailModel.getDivision(), str_todays_date, radioButton.getText().toString()};
                 String[] selectionArgs = {studentDetailModel.getRollNo()};//
                 String selection = "roll_no" + " = ?";
-              //  boolean result = SchoolApp.dbCon.updateBulk(DbHelper.TABLE_DB_SCHOOL, selection, valuesArray, utils.column_studentDetails, selectionArgs);
+                //  boolean result = SchoolApp.dbCon.updateBulk(DbHelper.TABLE_DB_SCHOOL, selection, valuesArray, utils.column_studentDetails, selectionArgs);
                 boolean result = SchoolApp.dbCon.updateBulk(DbHelper.TABLE_DB_MARK_DAILYATTENDANCE, selection, valuesArray, utils.column_mark_attendanceDetails, selectionArgs);
                 if (result) {
-                    Toast.makeText(mContext, "Data inserted Successfully", Toast.LENGTH_SHORT).show();
+                    TastyToast.makeText(mContext, "Data inserted Successfully", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
 
                 }
 

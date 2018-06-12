@@ -124,4 +124,6 @@
     <string name="smile_rating_okay">Okay</string>
     <string name="smile_rating_good">Good</string>
     <string name="smile_rating_great">Great</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
 </resources>

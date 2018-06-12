@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.android.sudesi.schoolapp.R;
 import com.android.sudesi.schoolapp.SchoolApp;
+import com.android.sudesi.schoolapp.SmileyToast.TastyToast;
 import com.android.sudesi.schoolapp.dbconfig.DataBaseCon;
 import com.android.sudesi.schoolapp.dbconfig.DatabaseCopy;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
@@ -89,7 +90,8 @@ public class StudentActivity extends Activity {
                         String selection = "Roll_No" + " = ?";
                         boolean result = SchoolApp.dbCon.updateBulk(DbHelper.TABLE_DB_SCHOOL, selection, valuesArray, utils.column_studentDetails, selectionArgs);
                         if (result) {
-                            Toast.makeText(mContext, "Data inserted Successfully", Toast.LENGTH_SHORT).show();
+                            TastyToast.makeText(mContext, "Data inserted Successfully", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
+
                             edt_roll_no.setText("");
                             edt_name.setText("");
                             edt_dob.setText("");
@@ -107,8 +109,6 @@ public class StudentActivity extends Activity {
             }
         });
     }
-
-
 
 
 }

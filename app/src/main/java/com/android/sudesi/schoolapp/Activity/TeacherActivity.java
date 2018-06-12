@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.android.sudesi.schoolapp.R;
 import com.android.sudesi.schoolapp.SchoolApp;
+import com.android.sudesi.schoolapp.SmileyToast.TastyToast;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
 import com.android.sudesi.schoolapp.libs.Utils;
 import com.android.sudesi.schoolapp.model.TeacherDetailModel;
@@ -75,7 +76,7 @@ public class TeacherActivity extends Activity {
                         String selection = "T_No" + " = ?";
                         boolean result = SchoolApp.dbCon.updateBulk(DbHelper.TABLE_DB_TEACHER, selection, valuesArray, utils.column_teacherDetails, selectionArgs);
                         if (result) {
-                            Toast.makeText(mContext, "Data inserted Successfully", Toast.LENGTH_SHORT).show();
+                            TastyToast.makeText(getApplicationContext(), "Data inserted Successfully", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
                             edt_teacher_no.setText("");
                             edt_teacher_name.setText("");
                             edt_teachr_std.setText("");

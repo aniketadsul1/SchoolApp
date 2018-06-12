@@ -18,6 +18,7 @@ import com.android.sudesi.schoolapp.Adapter.AttendanceDetailsAdapter;
 import com.android.sudesi.schoolapp.Adapter.StudentDetailsAdapter;
 import com.android.sudesi.schoolapp.R;
 import com.android.sudesi.schoolapp.SchoolApp;
+import com.android.sudesi.schoolapp.SmileyToast.TastyToast;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
 import com.android.sudesi.schoolapp.model.StudentDetailModel;
 
@@ -58,7 +59,7 @@ public class AttendanceMarkActivity extends Activity {
                 cursor.close();
 
             } else {
-                Toast.makeText(mContext, "No data found..!", Toast.LENGTH_SHORT).show();
+                TastyToast.makeText(mContext, "No data found..!", TastyToast.LENGTH_LONG, TastyToast.ERROR);
             }
             attendanceDetailsAdapter = new AttendanceDetailsAdapter(mContext, studentDetailModelList);
             list_student1.setAdapter(attendanceDetailsAdapter);

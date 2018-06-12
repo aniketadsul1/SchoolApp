@@ -33,6 +33,7 @@ import android.widget.Toast;
 
 import com.android.sudesi.schoolapp.Activity.MainActivity;
 import com.android.sudesi.schoolapp.Activity.TimetableActivity;
+import com.android.sudesi.schoolapp.SmileyToast.TastyToast;
 import com.android.sudesi.schoolapp.SmilyRating.BaseRating;
 import com.android.sudesi.schoolapp.SmilyRating.SmileRating;
 import com.android.sudesi.schoolapp.SweetAlert.SweetAlertDialog;
@@ -42,7 +43,7 @@ import static android.content.ContentValues.TAG;
 public class FragmentTimeTables extends Fragment {
 
     ImageView logoutBtn;
-    Button btn_timetable,btn_feedback;
+    Button btn_timetable, btn_feedback;
     Context mContext;
 
     @Override
@@ -62,8 +63,8 @@ public class FragmentTimeTables extends Fragment {
     private void init(View rootview) {
 
         btn_timetable = (Button) rootview.findViewById(R.id.btn_timetable);
-        btn_feedback=(Button)rootview.findViewById(R.id.btn_feedback);
-        logoutBtn=(ImageView)rootview.findViewById(R.id.logoutBtn);
+        btn_feedback = (Button) rootview.findViewById(R.id.btn_feedback);
+        logoutBtn = (ImageView) rootview.findViewById(R.id.logoutBtn);
 
         btn_timetable.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,12 +79,11 @@ public class FragmentTimeTables extends Fragment {
             public void onClick(View view) {
                 final Dialog dialog = new Dialog(mContext);
                 dialog.setContentView(R.layout.feedback_dialog);
-                dialog.setTitle("Feedback");
                 SmileRating ratingView;
 
                 Button dialogfeedbackResponce = (Button) dialog.findViewById(R.id.btn_feedback_responce);
-                Button dialogCancel=(Button)dialog.findViewById(R.id.btn_feedback_cancel);
-                ratingView=(SmileRating)dialog.findViewById(R.id.ratingView);
+                Button dialogCancel = (Button) dialog.findViewById(R.id.btn_feedback_cancel);
+                ratingView = (SmileRating) dialog.findViewById(R.id.ratingView);
                 ratingView.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
                     @Override
                     public void onSmileySelected(@BaseRating.Smiley int smiley, boolean reselected) {
@@ -112,7 +112,8 @@ public class FragmentTimeTables extends Fragment {
                 dialogfeedbackResponce.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(mContext, "send sucessfully", Toast.LENGTH_SHORT).show();
+                        TastyToast.makeText(mContext, "Sent Successfully", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
+
                     }
                 });
                 dialogCancel.setOnClickListener(new View.OnClickListener() {

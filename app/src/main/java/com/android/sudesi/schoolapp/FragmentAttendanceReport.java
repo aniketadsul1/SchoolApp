@@ -38,6 +38,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.sudesi.schoolapp.Activity.MainActivity;
+import com.android.sudesi.schoolapp.SmileyToast.TastyToast;
 import com.android.sudesi.schoolapp.SweetAlert.SweetAlertDialog;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
 import com.android.sudesi.schoolapp.model.AttendanceDetailsModel;
@@ -483,7 +484,7 @@ public class FragmentAttendanceReport extends Fragment implements View.OnClickLi
                 cursor.close();
 
             } else {
-                Toast.makeText(getContext(), "No data found..!", Toast.LENGTH_SHORT).show();
+                TastyToast.makeText(getContext(), "No data found..!", TastyToast.LENGTH_LONG, TastyToast.ERROR);
             }
             for (int i = 0; i < attendanceDetailsModelList.size(); i++) {
                 String date1;
@@ -531,7 +532,7 @@ public class FragmentAttendanceReport extends Fragment implements View.OnClickLi
                 cursor1.close();
 
             } else {
-                Toast.makeText(getContext(), "No data found..!", Toast.LENGTH_SHORT).show();
+                TastyToast.makeText(getContext(), "No data found..!", TastyToast.LENGTH_LONG, TastyToast.ERROR);
             }
             for (int i = 0; i < attendanceDetailsModelList1.size(); i++) {
                 String date1;

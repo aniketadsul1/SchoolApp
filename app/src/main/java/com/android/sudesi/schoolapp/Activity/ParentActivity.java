@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.android.sudesi.schoolapp.R;
 import com.android.sudesi.schoolapp.SchoolApp;
+import com.android.sudesi.schoolapp.SmileyToast.TastyToast;
 import com.android.sudesi.schoolapp.dbconfig.DataBaseCon;
 import com.android.sudesi.schoolapp.dbconfig.DatabaseCopy;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
@@ -75,7 +76,7 @@ public class ParentActivity extends Activity {
                     String selection = "Name" + " = ?";
                     boolean result = SchoolApp.dbCon.update(DbHelper.TABLE_DB_PARENT, selection, valuesArray, utils.column_parentDetails, selectionArgs);
                     if (result) {
-                        Toast.makeText(mContext, "Data inserted Successfully", Toast.LENGTH_SHORT).show();
+                        TastyToast.makeText(getApplicationContext(), "Data inserted Successfully", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
                         edt_name_parent.setText("");
                         edt_address_parent.setText("");
                         edt_Mob_no.setText("");

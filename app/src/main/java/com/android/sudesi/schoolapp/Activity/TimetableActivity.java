@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.android.sudesi.schoolapp.Adapter.TimeTableAdapter;
 import com.android.sudesi.schoolapp.R;
 import com.android.sudesi.schoolapp.SchoolApp;
+import com.android.sudesi.schoolapp.SmileyToast.TastyToast;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
 import com.android.sudesi.schoolapp.model.StudentDetailModel;
 import com.android.sudesi.schoolapp.model.TimetableDetailsModel;
@@ -48,7 +49,7 @@ public class TimetableActivity extends Activity {
             cursor.close();
 
         } else {
-            Toast.makeText(mContext, "No data found..!", Toast.LENGTH_SHORT).show();
+            TastyToast.makeText(mContext, "No data found..!", TastyToast.LENGTH_LONG, TastyToast.ERROR);
         }
         timeTableAdapter = new TimeTableAdapter(mContext, timetableDetailsModelList);
         list_timetable.setAdapter(timeTableAdapter);
