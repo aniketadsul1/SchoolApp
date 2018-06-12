@@ -154,7 +154,7 @@
                 android:layout_width="@dimen/_80sdp"
                 android:layout_height="@dimen/_80sdp"
                 android:layout_gravity="center"
-                android:src="@drawable/camera" />
+                android:src="@mipmap/camera" />
 
             <EditText
                 android:id="@+id/edt_message"
