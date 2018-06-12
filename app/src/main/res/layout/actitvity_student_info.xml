@@ -1,0 +1,233 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:weightSum="2">
+
+        <com.android.sudesi.schoolapp.CustomView.Customtextviews
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:gravity="center_horizontal"
+            android:text="@string/student_info"
+            android:textColor="@color/warning_stroke_color"
+            android:typeface="monospace"
+            android:layout_weight="1.9"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/logoutBtn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="0.1"
+            android:background="@drawable/logoutimg" />
+
+    </LinearLayout>
+
+    <com.android.sudesi.schoolapp.CircularImageView.CircleImageView
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/studentphoto"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/dark" />
+
+
+
+    <com.android.sudesi.schoolapp.CustomView.Customtextviews
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Roll Number"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@android:color/white"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_2sdp">
+
+        <com.android.sudesi.schoolapp.CustomView.Customtextviews
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="roll no"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            />
+
+    </android.support.v7.widget.CardView>
+
+    <com.android.sudesi.schoolapp.CustomView.Customtextviews
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Student Name"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@android:color/white"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_2sdp">
+
+        <com.android.sudesi.schoolapp.CustomView.Customtextviews
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Student Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            />
+    </android.support.v7.widget.CardView>
+
+    <com.android.sudesi.schoolapp.CustomView.Customtextviews
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Class"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@android:color/white"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_2sdp">
+
+        <com.android.sudesi.schoolapp.CustomView.Customtextviews
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="class"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            />
+
+    </android.support.v7.widget.CardView>
+
+    <com.android.sudesi.schoolapp.CustomView.Customtextviews
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Division"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@android:color/white"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_2sdp">
+
+        <com.android.sudesi.schoolapp.CustomView.Customtextviews
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="class"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            />
+
+    </android.support.v7.widget.CardView>
+    <com.android.sudesi.schoolapp.CustomView.Customtextviews
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Date of Birth"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@android:color/white"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_2sdp">
+
+        <com.android.sudesi.schoolapp.CustomView.Customtextviews
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="date of birth"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            />
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -79,6 +79,7 @@
     <string name="try_me">Try me!</string>
     <string name="create_notification">Create Notification</string>
     <string name="mark_attendance">Mark Attendance</string>
+    <string name="student_info">Student Information</string>
     <string name="select_standard">Select Standard</string>
     <string name="select_division">Select Division</string>
     <string name="annoucement_type">Annoucement Type</string>

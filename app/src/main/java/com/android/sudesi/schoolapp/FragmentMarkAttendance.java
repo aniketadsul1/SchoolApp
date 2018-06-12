@@ -34,8 +34,11 @@ public class FragmentMarkAttendance extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootview = inflater.inflate(R.layout.fragment_c, container, false);
-        init(rootview);
+      /*  View rootview = inflater.inflate(R.layout.fragment_c, container, false);
+        init(rootview);*/
+
+        View rootview = inflater.inflate(R.layout.actitvity_student_info, container, false);
+
         return rootview;
     }
 
