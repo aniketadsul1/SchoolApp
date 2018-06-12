@@ -17,25 +17,32 @@
 package com.android.sudesi.schoolapp;
 
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.android.sudesi.schoolapp.Activity.MainActivity;
 import com.android.sudesi.schoolapp.Activity.TimetableActivity;
+import com.android.sudesi.schoolapp.SmilyRating.BaseRating;
+import com.android.sudesi.schoolapp.SmilyRating.SmileRating;
 import com.android.sudesi.schoolapp.SweetAlert.SweetAlertDialog;
+
+import static android.content.ContentValues.TAG;
 
 public class FragmentTimeTables extends Fragment {
 
     ImageView logoutBtn;
-    Button btn_timetable;
+    Button btn_timetable,btn_feedback;
     Context mContext;
 
     @Override
@@ -55,6 +62,7 @@ public class FragmentTimeTables extends Fragment {
     private void init(View rootview) {
 
         btn_timetable = (Button) rootview.findViewById(R.id.btn_timetable);
+        btn_feedback=(Button)rootview.findViewById(R.id.btn_feedback);
         logoutBtn=(ImageView)rootview.findViewById(R.id.logoutBtn);
 
         btn_timetable.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +70,59 @@ public class FragmentTimeTables extends Fragment {
             public void onClick(View view) {
                 Intent i = new Intent(mContext, TimetableActivity.class);
                 startActivity(i);
+
+            }
+        });
+        btn_feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Dialog dialog = new Dialog(mContext);
+                dialog.setContentView(R.layout.feedback_dialog);
+                dialog.setTitle("Feedback");
+                SmileRating ratingView;
+
+                Button dialogfeedbackResponce = (Button) dialog.findViewById(R.id.btn_feedback_responce);
+                Button dialogCancel=(Button)dialog.findViewById(R.id.btn_feedback_cancel);
+                ratingView=(SmileRating)dialog.findViewById(R.id.ratingView);
+                ratingView.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
+                    @Override
+                    public void onSmileySelected(@BaseRating.Smiley int smiley, boolean reselected) {
+                        // reselected is false when user selects different smiley that previously selected one
+                        // true when the same smiley is selected.
+                        // Except if it first time, then the value will be false.
+                        switch (smiley) {
+                            case SmileRating.BAD:
+                                Log.i(TAG, "Bad");
+                                break;
+                            case SmileRating.GOOD:
+                                Log.i(TAG, "Good");
+                                break;
+                            case SmileRating.GREAT:
+                                Log.i(TAG, "Great");
+                                break;
+                            case SmileRating.OKAY:
+                                Log.i(TAG, "Okay");
+                                break;
+                            case SmileRating.TERRIBLE:
+                                Log.i(TAG, "Terrible");
+                                break;
+                        }
+                    }
+                });
+                dialogfeedbackResponce.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(mContext, "send sucessfully", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                dialogCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
 
             }
         });
