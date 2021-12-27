@@ -12,7 +12,7 @@
         android:layout_marginRight="@dimen/_15sdp"
         android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_gravity="center_horizontal"
@@ -23,7 +23,7 @@
             app:cardCornerRadius="@dimen/_3sdp"
             app:cardElevation="@dimen/_2sdp">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -38,10 +38,10 @@
                     android:inputType="number"
                     android:maxLength="10"
                     android:textSize="@dimen/_8sdp" />
-            </android.support.design.widget.TextInputLayout>
-        </android.support.v7.widget.CardView>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_gravity="center_horizontal"
@@ -52,7 +52,7 @@
             app:cardCornerRadius="@dimen/_3sdp"
             app:cardElevation="@dimen/_2sdp">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -67,10 +67,10 @@
                     android:inputType="textPersonName"
                     android:maxLength="50"
                     android:textSize="@dimen/_8sdp" />
-            </android.support.design.widget.TextInputLayout>
-        </android.support.v7.widget.CardView>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_gravity="center_horizontal"
@@ -81,7 +81,7 @@
             app:cardCornerRadius="@dimen/_3sdp"
             app:cardElevation="@dimen/_2sdp">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -95,10 +95,10 @@
                     android:hint="DOB"
                     android:inputType="date"
                     android:textSize="@dimen/_8sdp" />
-            </android.support.design.widget.TextInputLayout>
-        </android.support.v7.widget.CardView>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_gravity="center_horizontal"
@@ -109,7 +109,7 @@
             app:cardCornerRadius="@dimen/_3sdp"
             app:cardElevation="@dimen/_2sdp">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -124,10 +124,10 @@
                     android:inputType="text"
                     android:maxLength="150"
                     android:textSize="@dimen/_8sdp" />
-            </android.support.design.widget.TextInputLayout>
-        </android.support.v7.widget.CardView>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_gravity="center_horizontal"
@@ -138,7 +138,7 @@
             app:cardCornerRadius="@dimen/_3sdp"
             app:cardElevation="@dimen/_2sdp">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -153,10 +153,10 @@
                     android:inputType="number"
                     android:maxLength="10"
                     android:textSize="@dimen/_8sdp" />
-            </android.support.design.widget.TextInputLayout>
-        </android.support.v7.widget.CardView>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_gravity="center_horizontal"
@@ -167,7 +167,7 @@
             app:cardCornerRadius="@dimen/_3sdp"
             app:cardElevation="@dimen/_2sdp">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -182,10 +182,10 @@
                     android:inputType="number"
                     android:maxLength="5"
                     android:textSize="@dimen/_8sdp" />
-            </android.support.design.widget.TextInputLayout>
-        </android.support.v7.widget.CardView>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_gravity="center_horizontal"
@@ -196,7 +196,7 @@
             app:cardCornerRadius="@dimen/_3sdp"
             app:cardElevation="@dimen/_2sdp">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -211,8 +211,8 @@
                     android:inputType="text"
                     android:maxLength="5"
                     android:textSize="@dimen/_8sdp" />
-            </android.support.design.widget.TextInputLayout>
-        </android.support.v7.widget.CardView>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/btn_save"

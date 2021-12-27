@@ -8,8 +8,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.provider.Settings;
-import android.support.v7.app.NotificationCompat;
 import android.util.Log;
+
+import androidx.core.app.NotificationCompat;
 
 public class InternetBroadcast extends BroadcastReceiver {
 

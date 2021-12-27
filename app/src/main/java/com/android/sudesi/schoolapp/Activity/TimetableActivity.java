@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
@@ -16,7 +16,6 @@ import com.android.sudesi.schoolapp.R;
 import com.android.sudesi.schoolapp.SchoolApp;
 import com.android.sudesi.schoolapp.SmileyToast.TastyToast;
 import com.android.sudesi.schoolapp.dbconfig.DbHelper;
-import com.android.sudesi.schoolapp.model.StudentDetailModel;
 import com.android.sudesi.schoolapp.model.TimetableDetailsModel;
 
 import java.util.ArrayList;

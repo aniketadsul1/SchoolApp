@@ -45,7 +45,7 @@
         android:paddingTop="@dimen/_10sdp"
         android:src="@drawable/school12" />
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_250sdp"
@@ -77,6 +77,6 @@
             android:typeface="monospace"
             android:textStyle="normal"/>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
