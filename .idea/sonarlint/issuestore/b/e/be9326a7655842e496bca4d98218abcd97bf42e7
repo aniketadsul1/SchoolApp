@@ -1,0 +1,9 @@
+
+o
+java:S2293("YReplace the type specification in this constructor call with the diamond operator ("<>").(—ó¿Ê
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“Žä¹
+m	java:S116"XRename this field "list_student1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ§ÁÒ
+A
+java:S1659"&Declare "standard" on a separate line.(ÔÎðâúÿÿÿÿ
+€
+java:S1450!"eRemove the "studentDetailModelList" field and declare it as a local variable in the relevant methods.( öËÆûÿÿÿÿ
